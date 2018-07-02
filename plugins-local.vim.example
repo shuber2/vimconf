@@ -1,0 +1,7 @@
+Plug 'jamessan/vim-gnupg'
+
+" An alternative to youcompleteme (ycm)
+"Plug 'justmao945/vim-clang'
+Plug 'shuber2/vim-clang', { 'branch': 'multipy' }
+
+"Plug 'kien/tabman.vim'
