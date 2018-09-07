@@ -97,7 +97,7 @@ au Filetype tex set shiftwidth=2
 au BufRead,BufNewFile *.plt set filetype=gnuplot
 
 :let g:org_todo_keywords = [['TODO(t)', 'WAITING(w)', '|', 'DONE(d)'],
-      \ ['|', 'OBSOLETE(o)'],
+      \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
       \ ['CANCELED(c)']]
 
 " Trailing whitespace
