@@ -72,7 +72,7 @@ let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
 
 let g:guesslang_langs=[ 'en_US', 'de_AT']
-au FileType text,markdown,mail,tex setlocal spell
+au FileType text,markdown,mail,tex,gitcommit setlocal spell
 au BufReadPost * :DetectIndent
 
 au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
