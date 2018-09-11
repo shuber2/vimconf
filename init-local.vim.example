@@ -10,3 +10,5 @@
 
 " Do not show diagnostic window of vim-clang
 let g:clang_diagsopt = ''
+
+let g:ConqueTerm_StartMessages = 0

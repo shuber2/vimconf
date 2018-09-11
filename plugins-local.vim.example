@@ -3,4 +3,6 @@ Plug 'jamessan/vim-gnupg'
 " An alternative to youcompleteme (ycm)
 Plug 'justmao945/vim-clang'
 
+Plug 'vim-scripts/Conque-GDB'
+
 "Plug 'kien/tabman.vim'
