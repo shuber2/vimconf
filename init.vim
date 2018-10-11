@@ -7,16 +7,20 @@ set number
 set cursorline
 set scrolloff=5
 
-
 set encoding=utf-8
 
 set listchars=tab:»­,trail:·,eol:$
 set virtualedit=block
 
+filetype plugin indent on
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+
+set autoindent
+set smartindent
 
 set incsearch
 set hlsearch
@@ -30,7 +34,6 @@ if has('nvim')
 end
 
 syntax on
-filetype plugin indent on
 runtime plugsetup.vim
 
 let g:airline_powerline_fonts=1
