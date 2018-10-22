@@ -1,8 +1,8 @@
 Plug 'jamessan/vim-gnupg'
 
 " An alternative to youcompleteme (ycm)
-Plug 'justmao945/vim-clang'
+Plug 'justmao945/vim-clang', {'for': ['c', 'cpp', 'objc']}
 
-Plug 'vim-scripts/Conque-GDB'
+Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
 
 "Plug 'kien/tabman.vim'

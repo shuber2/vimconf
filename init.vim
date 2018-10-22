@@ -60,7 +60,11 @@ call neomake#configure#automake('w')
 
 let g:clang_compilation_database = '.'
 
-let g:deoplete#enable_at_startup=1
+" Speedup deoplete startup time, see deoplete FAQ
+let g:python3_host_prog = '/usr/bin/python3'
+" deoplete requires huge startuptime. Delay loading upon first InsertEnter.
+let g:deoplete#enable_at_startup = 0
+autocmd InsertEnter * call deoplete#enable()
 
 "augroup pencil
   "au!
