@@ -39,12 +39,30 @@ check_requirements()
     check_py3 neovim
 }
 
+backup() {
+    if [ -e $1 ]; then
+        echo "  Move $1"
+        mv $1 $2/
+    fi
+}
+
 install() {
+    BACKUPDIR=$(mktemp -d "$HOME/.vim-old-XXXXXXXX")
+    echo "Move old vim files to $BACKUPDIR"
+    backup $HOME/.viminfo $BACKUPDIR
+    backup $HOME/.vimrc $BACKUPDIR
+    backup $HOME/.gvimrc $BACKUPDIR
+    backup $HOME/.config/nvim $BACKUPDIR
+
     echo "Installing files."
-    touch $HOME/.viminfo
+    echo "# Empty" > $HOME/.viminfo
     ln -s $HOME/.vim/init.vim $HOME/.vimrc
     ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
     ln -s $HOME/.vim $HOME/.config/nvim
+
+    echo ""
+    echo "vim-startify may complain about invalid viminfo file. It will"
+    echo "disappear once you opened the first file."
 }
 
 
