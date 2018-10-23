@@ -1,28 +1,48 @@
 # A modular vim configuration
 
 This is my personal vim configuration that is partly inspired by SpaceVim. It
-is compatible to neovim and (g)vim (version 8 or higher). The configuration is
-split up into multiple files such that personal customization is separated from
+is compatible to vim, gvim (8.0+) and neovim (0.2+). The configuration is split
+up into multiple files such that personal customization is separated from
 boilerplate code.
 
 
 ## Installation
 
-Simply clone this repository into ~/.vim and invoke install.sh therein. The
-install script just creates symlinks to vim/gvim/neovim configuration files and
-directories.
+### Requirements
+
+The install script that is shipped with this configuration also checks
+for the following requirements:
+
+  - python3 support for vim/gvim
+  - neovim python3 module
+  - aspell
+
+Under a Debian-like Linux system you can install these by the following commands
+
+````
+sudo apt-get install aspell aspell-de python3-pip
+pip3 install neovim
+````
+
+### Clone & install
+
+If you already have a vim configuration in place then you may first move your
+~/.vim directory first
+
+````
+mv ~/.vim ~/.vim-old
+````
+
+Assumung that there is ~/.vim anymore, simply clone this repository into ~/.vim
+and invoke install.sh therein.
 
 ````
 git clone https://git.sthu.org/repos/vimconf.git ~/.vim
 ~/.vim/install.sh
 ````
 
-The install file also checks requirements for the configuration and the plugins
-added:
-
-  - python3 support for vim/gvim
-  - neovim python3 module
-  - aspell
+This install script creates backups of existing configuration files (e.g.,
+~/.vimrc) and then creates symlinks to configuration files in ~/.vim.
 
 
 ## Specialization for local machines
@@ -36,4 +56,4 @@ configuration. The following files are read if existent:
   - keymaps-local.vim
   - init-local.vim
 
-For all four example files are shipped with the repository.
+Example files are shipped with the repository.
