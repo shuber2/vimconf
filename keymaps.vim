@@ -6,8 +6,6 @@ nnoremap <C-space> pumvisible() ? "\<c-n>" : "\<tab>"
 
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :TagbarToggle<cr>
-au Filetype tex nmap <buffer> <F3> :VimtexTocToggle<CR>
-au Filetype tex nmap <buffer> <F4> :VimtexLabelsToggle<CR>
 au Filetype gnuplot map <buffer> <F5> :call OpenIn("gnuplot -persist") <CR>
 
 nmap <s-PageDown> :bn<CR>
