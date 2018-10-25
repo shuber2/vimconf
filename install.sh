@@ -54,7 +54,8 @@ install() {
     backup $HOME/.gvimrc $BACKUPDIR
     backup $HOME/.config/nvim $BACKUPDIR
 
-    echo "Installing files."
+    echo ""
+    echo "Installing files..."
     echo "# Empty" > $HOME/.viminfo
     ln -s $HOME/.vim/init.vim $HOME/.vimrc
     ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
@@ -63,6 +64,10 @@ install() {
     echo ""
     echo "vim-startify may complain about invalid viminfo file. It will"
     echo "disappear once you opened the first file."
+    echo ""
+    echo "Add this line to your shell configuration, e.g., ~/.profile, to"
+    echo "use vim as man pager:"
+    echo "  export MANPAGER=\"view -c MANPAGER -\""
 }
 
 
