@@ -4,3 +4,5 @@ Plug 'jamessan/vim-gnupg'
 Plug 'justmao945/vim-clang', {'for': ['c', 'cpp', 'objc']}
 
 "Plug 'kien/tabman.vim'
+
+"Plug 'chikamichi/mediawiki.vim'

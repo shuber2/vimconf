@@ -79,8 +79,10 @@ let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
 
 let g:guesslang_langs=[ 'en_US', 'de_AT']
-au FileType text,markdown,mail,tex,gitcommit setlocal spell
+au FileType text,markdown,mail,tex,gitcommit,mediawiki setlocal spell
 au BufReadPost * :DetectIndent
+
+au FileType mediawiki setlocal wrap linebreak tw=0
 
 au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
 au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
