@@ -57,3 +57,10 @@ configuration. The following files are read if existent:
   - init-local.vim
 
 Example files are shipped with the repository.
+
+
+## Terminal color settings
+
+For consistent background colors you may change the background colors of your
+terminal program to the gruvbox black #1c1c1c. Otherwise regions of your
+terminal may appear in a saturated black (#000) rather than the gruvbox black.
