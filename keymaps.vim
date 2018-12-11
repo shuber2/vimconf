@@ -22,6 +22,7 @@ au Filetype c,cpp,objc map <buffer> <S-F11> :FSHere<CR>
 au BufNewFile *.{h,hpp,hxx} call AddIncludeGuards()
 
 au Filetype html,xml imap <buffer> <C-_> <C-X>/
+au Filetype markdown map <buffer> <F5> :call RunPandoc()<CR>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 vmap <Enter> <Plug>(EasyAlign)

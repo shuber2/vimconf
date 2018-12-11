@@ -86,6 +86,17 @@ function AddIncludeGuards()
 endfunction
 
 
+function RunPandoc()
+  " If pandoc.css exists, use it
+  let cssopts = ""
+  if findfile("pandoc.css", ".") == "pandoc.css"
+    let cssopts = "-c pandoc.css --self-contained"
+  endif
+
+  execute ":!pandoc " . cssopts . " --toc " . @% . " -o " . @% . ".html"
+endfunction
+
+
 if filereadable($HOME . '/.vim/macros-local.vim')
   source ~/.vim/macros-local.vim
 endif
