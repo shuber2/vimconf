@@ -90,10 +90,10 @@ function RunPandoc()
   " If pandoc.css exists, use it
   let cssopts = ""
   if findfile("pandoc.css", ".") == "pandoc.css"
-    let cssopts = "-c pandoc.css --self-contained"
+    let cssopts = "-c pandoc.css"
   endif
 
-  execute ":!pandoc " . cssopts . " --toc " . @% . " -o " . @% . ".html"
+  execute ":!pandoc " . cssopts . " --self-contained --toc " . @% . " -o " . @% . ".html"
 endfunction
 
 
