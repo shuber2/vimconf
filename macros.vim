@@ -96,6 +96,22 @@ function RunPandoc()
   execute ":!pandoc " . cssopts . " --self-contained --toc " . @% . " -o " . @% . ".html"
 endfunction
 
+function RunMarkdownpy(prog)
+  execute ":!" . a:prog . " " . @% . " > " . @% . ".html"
+endfunction
+
+function RunMarkdown()
+  if executable("pandoc")
+    call RunPandoc()
+  elseif executable("markdown2")
+    call RunMarkdownpy("markdown2")
+  elseif executable("markdown_py")
+    call RunMarkdownpy("markdown_py")
+  else
+    echo "No markdown implementation found."
+  endif
+endfunction
+
 
 if filereadable($HOME . '/.vim/macros-local.vim')
   source ~/.vim/macros-local.vim
