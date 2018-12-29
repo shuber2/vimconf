@@ -47,7 +47,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'jceb/vim-orgmode', {'for': ['org']}
 
 Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
-Plug 'ciaranm/detectindent'
+Plug 'roryokane/detectindent'
 
 Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'objc']}
 Plug 'ludovicchabant/vim-gutentags', {'for': ['c', 'cpp', 'objc']}
