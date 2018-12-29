@@ -28,7 +28,7 @@ Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'hail2u/vim-css3-syntax', {'for': ['scss', 'css']}
 Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
 
-Plug 'tpope/vim-ragtag', {'for': ['html', 'xml']}
+Plug 'tpope/vim-ragtag'
 
 Plug 'lervag/vimtex', {'for': 'tex'}
 
