@@ -84,6 +84,8 @@ let g:guesslang_langs=[ 'en_US', 'de_AT']
 au FileType text,markdown,mail,tex,gitcommit,mediawiki setlocal spell
 au BufReadPost * :DetectIndent
 
+au FileType text,markdown,mail,gitcommit,mediawiki set fo+=n
+
 au FileType mediawiki setlocal wrap linebreak tw=0
 
 au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
