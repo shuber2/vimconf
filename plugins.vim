@@ -45,6 +45,8 @@ Plug 'Shougo/neosnippet-snippets'
 
 Plug 'tpope/vim-speeddating'
 Plug 'jceb/vim-orgmode', {'for': ['org']}
+Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
 
 Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
 Plug 'roryokane/detectindent'

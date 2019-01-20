@@ -81,10 +81,10 @@ let g:vim_markdown_math=1
 au FileType markdown call RagtagInit()
 
 let g:guesslang_langs=[ 'en_US', 'de_AT']
-au FileType text,markdown,mail,tex,gitcommit,mediawiki setlocal spell
+au FileType text,markdown,mail,tex,gitcommit,mediawiki,vimwiki setlocal spell
 au BufReadPost * :DetectIndent
 
-au FileType text,markdown,mail,gitcommit,mediawiki set fo+=n
+au FileType text,markdown,mail,gitcommit,mediawiki,vimwiki set fo+=n
 
 au FileType mediawiki setlocal wrap linebreak tw=0
 
@@ -112,6 +112,8 @@ au BufRead,BufNewFile *.plt set filetype=gnuplot
 :let g:org_todo_keywords = [['TODO(t)', 'WAITING(w)', '|', 'DONE(d)'],
       \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
       \ ['CANCELED(c)']]
+
+let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
 " Trailing whitespace
 highlight default link TrailingWhitespace SpellCap
