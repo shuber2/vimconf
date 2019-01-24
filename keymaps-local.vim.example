@@ -1,1 +1,2 @@
 "map <F12> :TMToggle<CR>
+au Filetype vimwiki map <buffer> <F5> :execute ":!~/.local/bin/nextcloud-sync" <CR>
