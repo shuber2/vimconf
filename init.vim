@@ -113,7 +113,10 @@ au BufRead,BufNewFile *.plt set filetype=gnuplot
       \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
       \ ['CANCELED(c)']]
 
-let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
+let g:vimwiki_list = [{'path': '~/.vimwiki/',
+      \ 'template_path': '~/.vim/vimwiki/templates',
+      \ 'template_default': 'default',
+      \ 'template_ext': '.html'}]
 
 " Trailing whitespace
 highlight default link TrailingWhitespace SpellCap
