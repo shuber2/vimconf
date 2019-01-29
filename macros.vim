@@ -93,7 +93,7 @@ function RunPandoc()
     let cssopts = "-c pandoc.css"
   endif
 
-  execute ":!pandoc " . cssopts . " --self-contained --toc " . @% . " -o " . @% . ".html"
+  execute ":!pandoc " . cssopts . " --self-contained --toc '" . @% . "' -o '" . @% . "'.html"
 endfunction
 
 function RunMarkdownpy(prog)
