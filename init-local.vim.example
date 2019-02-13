@@ -1,3 +1,8 @@
+" Do not show diagnostic window of vim-clang
+let g:clang_diagsopt = ''
+
+let g:ConqueTerm_StartMessages = 0
+
 " Configuration for youcompleteme, if not using vim-clang.
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "let g:ycm_confirm_extra_conf = 0
@@ -7,8 +12,3 @@
 "let g:ycm_key_list_select_completion = ['<Down>']
 "nnoremap <buffer> <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "let g:ycm_filetype_whitelist = { 'c' : 1, 'cpp' : 1, 'cs' : 1, 'objc' : 1, 'java' : 1, 'python' : 1 }
-
-" Do not show diagnostic window of vim-clang
-let g:clang_diagsopt = ''
-
-let g:ConqueTerm_StartMessages = 0
