@@ -3,6 +3,9 @@ let g:clang_diagsopt = ''
 
 let g:ConqueTerm_StartMessages = 0
 
+" Reduce load on memory by updating one plugin at a time
+"let g:plug_threads = 1
+
 " Configuration for youcompleteme, if not using vim-clang.
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "let g:ycm_confirm_extra_conf = 0
