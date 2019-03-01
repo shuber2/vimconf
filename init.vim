@@ -107,8 +107,6 @@ au BufRead,BufNewFile *.muttrc set filetype=muttrc
 au BufRead,BufNewFile *.cls set filetype=tex
 au Filetype tex set shiftwidth=2
 
-au BufRead,BufNewFile *.plt set filetype=gnuplot
-
 :let g:org_todo_keywords = [['TODO(t)', 'WAITING(w)', '|', 'DONE(d)'],
       \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
       \ ['CANCELED(c)']]
