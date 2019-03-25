@@ -110,6 +110,7 @@ au BufRead,BufNewFile *.cls set filetype=tex
 au FileType text,markdown,mail,tex,gitcommit,mediawiki,vimwiki setlocal spell
 au FileType text,markdown,mail,gitcommit,mediawiki,vimwiki set fo+=n
 
+au Filetype go set shiftwidth=8 tabstop=8 noexpandtab
 au Filetype tex set shiftwidth=2 tabstop=2
 
 au FileType mediawiki setlocal wrap linebreak tw=0
