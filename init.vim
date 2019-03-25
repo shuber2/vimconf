@@ -1,6 +1,10 @@
 " My personal vim, nvim, gvim configuration
 " Author: Stefan Huber <shuber@sthu.org>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Some global settings
+
 set nocompatible
 set termguicolors
 set number
@@ -34,6 +38,17 @@ if has('nvim')
 end
 
 syntax on
+
+
+" Trailing whitespace
+highlight default link TrailingWhitespace SpellCap
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile * syn match TrailingWhitespace /\s\+$/ containedin=ALL
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Some global plugin settings
+
 runtime plugsetup.vim
 
 let g:airline_powerline_fonts=1
@@ -78,34 +93,45 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Some filetype settings
+
+" mutt and neomutt
+au BufRead,BufNewFile ~/.mutt/tmp/*mutt-* set filetype=mail
+au BufRead,BufNewFile *.muttrc set filetype=muttrc
+
+au BufRead,BufNewFile *.cls set filetype=tex
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Some filetype-specific settings
+
+au FileType text,markdown,mail,tex,gitcommit,mediawiki,vimwiki setlocal spell
+au FileType text,markdown,mail,gitcommit,mediawiki,vimwiki set fo+=n
+
+au Filetype tex set shiftwidth=2
+
+au FileType mediawiki setlocal wrap linebreak tw=0
+
+"git scissor line
+au Filetype mail syn match Statement /^\s*-*\s*>8\s*-*\s*$/
+au Filetype mail syn match Statement /^\s*-*\s*8<\s*-*\s*$/
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Some plugin-specific settings
+
 au FileType markdown call RagtagInit()
 
 let g:guesslang_langs=[ 'en_US', 'de_AT']
-au FileType text,markdown,mail,tex,gitcommit,mediawiki,vimwiki setlocal spell
 au BufReadPost * :DetectIndent
-
-au FileType text,markdown,mail,gitcommit,mediawiki,vimwiki set fo+=n
-
-au FileType mediawiki setlocal wrap linebreak tw=0
 
 au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
 au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
 
 au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
 au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
-
-
-"git scissor line
-au Filetype mail syn match Statement /^\s*-*\s*>8\s*-*\s*$/
-au Filetype mail syn match Statement /^\s*-*\s*8<\s*-*\s*$/
-
-"mutt and neomutt
-au BufRead,BufNewFile ~/.mutt/tmp/*mutt-* set filetype=mail
-au BufRead,BufNewFile *.muttrc set filetype=muttrc
-
-" Some settings for tex files
-au BufRead,BufNewFile *.cls set filetype=tex
-au Filetype tex set shiftwidth=2
 
 :let g:org_todo_keywords = [['TODO(t)', 'WAITING(w)', '|', 'DONE(d)'],
       \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
@@ -116,10 +142,8 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/',
       \ 'template_default': 'default',
       \ 'template_ext': '.html'}]
 
-" Trailing whitespace
-highlight default link TrailingWhitespace SpellCap
-" Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile * syn match TrailingWhitespace /\s\+$/ containedin=ALL
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 runtime macros.vim
 runtime keymaps.vim
