@@ -119,6 +119,9 @@ au FileType mediawiki setlocal wrap linebreak tw=0
 au Filetype mail syn match Statement /^\s*-*\s*>8\s*-*\s*$/
 au Filetype mail syn match Statement /^\s*-*\s*8<\s*-*\s*$/
 
+" Line wrap crippled with numbers shown
+au Filetype man set nonumber
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some plugin-specific settings
