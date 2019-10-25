@@ -40,16 +40,16 @@ end
 syntax on
 
 
-" Trailing whitespace
-highlight default link TrailingWhitespace SpellCap
-" Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile * syn match TrailingWhitespace /\s\+$/ containedin=ALL
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some global plugin settings
 
 runtime plugsetup.vim
+
+" Attention: Must be run after plugsetup.vim
+" Trailing whitespace
+highlight default link TrailingWhitespace SpellCap
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile * syn match TrailingWhitespace /\s\+$/ containedin=ALL
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
