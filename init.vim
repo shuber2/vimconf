@@ -47,9 +47,12 @@ runtime plugsetup.vim
 
 " Attention: Must be run after plugsetup.vim
 " Trailing whitespace
-highlight default link TrailingWhitespace SpellCap
+highlight default link BadWhitespace SpellCap
 " Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile * syn match TrailingWhitespace /\s\+$/ containedin=ALL
+au BufRead,BufNewFile * syn match BadWhitespace /\s\+$/ containedin=ALL
+" Make space before tab be flagged as bad and vice versa
+au BufRead,BufNewFile * syn match BadWhitespace / \+\t/ containedin=ALL
+au BufRead,BufNewFile * syn match BadWhitespace /\t \+/ containedin=ALL
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
