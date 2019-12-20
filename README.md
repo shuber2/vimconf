@@ -24,6 +24,9 @@ sudo apt-get install aspell aspell-de python3-pip
 pip3 install neovim
 ````
 
+Note that vim-tiny in Debian does not support python3, but vim-nox, vim-gtk3 or
+neovim does. You also want to make sure that you have curl and git installed.
+
 ### Clone & install
 
 If you already have a vim configuration in place then you may first move your
