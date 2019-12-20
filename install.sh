@@ -34,8 +34,10 @@ check_prog()
 
 check_requirements()
 {
-    check_vim +python3
     check_prog aspell
+    check_prog curl
+    check_prog git
+    check_vim +python3
     check_py3 neovim
 }
 
