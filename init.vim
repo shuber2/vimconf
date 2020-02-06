@@ -143,7 +143,8 @@ au Filetype man set nonumber
 
 au FileType markdown call RagtagInit()
 
-let g:guesslang_langs=[ 'en_US', 'de_AT']
+let g:detectspelllang_langs = {}
+let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
 au BufReadPost * :DetectIndent
 
 au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
