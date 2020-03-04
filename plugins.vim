@@ -55,6 +55,8 @@ Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'objc']}
 Plug 'ludovicchabant/vim-gutentags', {'for': ['c', 'cpp', 'objc']}
 "Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
 
+Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
+
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 

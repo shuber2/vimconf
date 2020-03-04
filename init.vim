@@ -94,6 +94,7 @@ let g:clang_compilation_database = '.'
 let g:python3_host_prog = '/usr/bin/python3'
 " deoplete requires huge startuptime. Delay loading upon first InsertEnter.
 let g:deoplete#enable_at_startup = 0
+let g:deoplete#enable_smart_case = 1
 autocmd InsertEnter * call deoplete#enable()
 
 "augroup pencil
@@ -136,6 +137,23 @@ au Filetype mail syn match Statement /^\s*-*\s*8<\s*-*\s*$/
 
 " Line wrap crippled with numbers shown
 au Filetype man set nonumber
+
+" Java completion
+au FileType java setlocal omnifunc=javacomplete#Complete
+au FileType java JCEnable
+" See https://github.com/artur-shaik/vim-Javacomplete2
+" <C-j>ji <leader>ji
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+" <C-j>ii <leader>jii
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+" <C-j>I <leader>jI
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+" <C-j>R <leader>jR
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
