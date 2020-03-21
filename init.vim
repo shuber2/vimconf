@@ -48,6 +48,10 @@ let g:enable_plugin_devicons = 1
 
 runtime plugsetup.vim
 
+" Some preferences for indent detection
+let g:detectindent_min_indent = 2
+let g:detectindent_preferred_indent = 4
+
 " Attention: Must be run after plugsetup.vim
 " Trailing whitespace
 highlight default link BadWhitespace SpellCap
@@ -158,6 +162,8 @@ imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
 nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
+" Minimum indenting for source code
+au FileType java,cpp,c,cs let g:detectindent_min_indent = 4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some plugin-specific settings
@@ -166,7 +172,7 @@ au FileType markdown call RagtagInit()
 
 let g:detectspelllang_langs = {}
 let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
-au BufReadPost * :DetectIndent
+"au BufReadPost * :DetectIndent
 
 au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
 au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
