@@ -1,3 +1,8 @@
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
 Plug 'mhinz/vim-startify'
 
 Plug 'vim-airline/vim-airline'
@@ -14,6 +19,8 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+
+Plug 'ryanoasis/vim-devicons', Cond(g:enable_plugin_devicons)
 
 Plug 'neomake/neomake'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}

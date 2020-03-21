@@ -43,6 +43,9 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some global plugin settings
 
+" Enable loading of devicons
+let g:enable_plugin_devicons = 1
+
 runtime plugsetup.vim
 
 " Attention: Must be run after plugsetup.vim

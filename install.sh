@@ -25,9 +25,19 @@ check_py3()
 check_prog()
 {
     if which "$1" > /dev/null; then
-        echo "$1 found"
+        echo "$1 found."
     else
         echo "$1 not found. Aborting."
+        exit
+    fi
+}
+
+check_font()
+{
+    if fc-list | grep -q "$1"; then
+        echo "Font $1 found."
+    else
+        echo "Font $1 not found. Either install it or clear g:enable_plugin_devicons."
         exit
     fi
 }
@@ -39,6 +49,7 @@ check_requirements()
     check_prog git
     check_vim +python3
     check_py3 neovim
+    check_font "Hack NF"
 }
 
 backup() {
