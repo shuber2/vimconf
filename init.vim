@@ -46,7 +46,7 @@ syntax on
 " Some global plugin settings
 
 " Disable devicons on linux terminal
-if !has("terminfo") || &term == 'linux'
+if $TERM == 'linux'
     let g:enable_plugin_devicons=0
 " Enable loading of devicons on all others
 else
