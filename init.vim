@@ -128,20 +128,20 @@ let g:vim_markdown_math=1
 " Some filetype settings
 
 " mutt and neomutt
-au BufRead,BufNewFile ~/.mutt/tmp/*mutt-* set filetype=mail
-au BufRead,BufNewFile *.muttrc set filetype=muttrc
+au BufRead,BufNewFile ~/.mutt/tmp/*mutt-* setlocal filetype=mail
+au BufRead,BufNewFile *.muttrc setlocal filetype=muttrc
 
-au BufRead,BufNewFile *.cls set filetype=tex
+au BufRead,BufNewFile *.cls setlocal filetype=tex
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some filetype-specific settings
 
 au FileType text,markdown,mail,tex,gitcommit,mediawiki,vimwiki setlocal spell
-au FileType text,markdown,mail,gitcommit,mediawiki,vimwiki set fo+=n
+au FileType text,markdown,mail,gitcommit,mediawiki,vimwiki setlocal fo+=n
 
-au Filetype go set shiftwidth=8 tabstop=8 noexpandtab
-au Filetype tex set shiftwidth=2 tabstop=2
+au Filetype go setlocal shiftwidth=8 tabstop=8 noexpandtab
+au Filetype tex setlocal shiftwidth=2 tabstop=2
 
 au FileType mediawiki setlocal wrap linebreak tw=0
 
@@ -150,7 +150,7 @@ au Filetype mail syn match Statement /^\s*-*\s*>8\s*-*\s*$/
 au Filetype mail syn match Statement /^\s*-*\s*8<\s*-*\s*$/
 
 " Line wrap crippled with numbers shown
-au Filetype man set nonumber
+au Filetype man setlocal nonumber
 
 " Java completion
 au FileType java setlocal omnifunc=javacomplete#Complete
