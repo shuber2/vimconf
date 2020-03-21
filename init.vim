@@ -33,6 +33,8 @@ set colorcolumn=+1
 set mouse=a
 set wildmode=longest,list:full
 
+set tabpagemax=100
+
 if has('nvim')
     set guicursor=
 end
