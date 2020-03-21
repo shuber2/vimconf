@@ -45,8 +45,13 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some global plugin settings
 
-" Enable loading of devicons
-let g:enable_plugin_devicons = 1
+" Disable devicons on linux terminal
+if !has("terminfo") || &term == 'linux'
+    let g:enable_plugin_devicons=0
+" Enable loading of devicons on all others
+else
+    let g:enable_plugin_devicons=1
+endif
 
 runtime plugsetup.vim
 
