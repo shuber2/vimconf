@@ -112,7 +112,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 " deoplete requires huge startuptime. Delay loading upon first InsertEnter.
 let g:deoplete#enable_at_startup = 0
 let g:deoplete#enable_smart_case = 1
-autocmd InsertEnter * call deoplete#enable()
+au InsertEnter * call deoplete#enable()
 
 "augroup pencil
   "au!
