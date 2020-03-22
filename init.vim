@@ -132,7 +132,7 @@ let g:vim_markdown_math=1
 
 " mutt and neomutt
 au BufRead,BufNewFile ~/.mutt/tmp/*mutt-* setlocal filetype=mail
-au BufRead,BufNewFile *.muttrc setlocal filetype=muttrc
+au BufRead,BufNewFile *.muttrc setlocal filetype=neomuttrc
 
 au BufRead,BufNewFile *.cls setlocal filetype=tex
 
