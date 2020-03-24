@@ -128,16 +128,6 @@ let g:vim_markdown_math=1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Some filetype settings
-
-" mutt and neomutt
-au BufRead,BufNewFile ~/.mutt/tmp/*mutt-* setlocal filetype=mail
-au BufRead,BufNewFile *.muttrc setlocal filetype=neomuttrc
-
-au BufRead,BufNewFile *.cls setlocal filetype=tex
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some filetype-specific settings
 
 au FileType text,markdown,mail,tex,gitcommit,mediawiki,vimwiki setlocal spell
