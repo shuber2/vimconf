@@ -60,6 +60,7 @@ runtime plugsetup.vim
 
 " Some preferences for indent detection
 let g:detectindent_min_indent = 2
+let g:detectindent_max_indent = 4
 let g:detectindent_preferred_indent = 4
 
 " Attention: Must be run after plugsetup.vim
@@ -172,7 +173,7 @@ au FileType markdown call RagtagInit()
 
 let g:detectspelllang_langs = {}
 let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
-"au BufReadPost * :DetectIndent
+au BufReadPost *.java :DetectIndent
 
 au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
 au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
