@@ -60,6 +60,8 @@ endif
 
 runtime plugsetup.vim
 
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 " Some preferences for indent detection
 let g:detectindent_min_indent = 2
 let g:detectindent_max_indent = 4
@@ -111,7 +113,6 @@ if OnBattery()
 else
   call neomake#configure#automake('nw', 1000)
 endif
-
 
 let g:clang_compilation_database = '.'
 
