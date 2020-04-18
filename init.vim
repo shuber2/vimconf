@@ -44,6 +44,8 @@ end
 
 syntax on
 
+" Load some macros
+runtime macros.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some global plugin settings
@@ -103,8 +105,13 @@ let NERDTreeQuitOnOpen=1
 let g:neomake_c_enabled_makers = ['clangtidy', 'clangcheck']
 let g:neomake_cpp_enabled_makers = ['clangtidy', 'clangcheck']
 
-call neomake#configure#automake('w')
-"let g:neomake_logfile = '/tmp/neomake.log'
+" Taken from neomake
+if OnBattery()
+  call neomake#configure#automake('w')
+else
+  call neomake#configure#automake('nw', 1000)
+endif
+
 
 let g:clang_compilation_database = '.'
 
@@ -193,7 +200,6 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/',
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-runtime macros.vim
 runtime keymaps.vim
 
 if filereadable($HOME . '/.vim/init-local.vim')

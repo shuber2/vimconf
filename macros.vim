@@ -96,9 +96,11 @@ function RunPandoc()
   execute ":!pandoc " . cssopts . " --self-contained --toc '" . @% . "' -o '" . @% . "'.html"
 endfunction
 
+
 function RunMarkdownpy(prog)
   execute ":!" . a:prog . " " . @% . " > " . @% . ".html"
 endfunction
+
 
 function RunMarkdown()
   if executable("pandoc")
@@ -110,6 +112,16 @@ function RunMarkdown()
   else
     echo "No markdown implementation found."
   endif
+endfunction
+
+
+function OnBattery()
+  if has('macunix')
+    return match(system('pmset -g batt'), "Now drawing from 'Battery Power'") != -1
+  elseif has('unix')
+    return readfile('/sys/class/power_supply/AC/online') == ['0']
+  endif
+  return 0
 endfunction
 
 
