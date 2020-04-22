@@ -6,6 +6,7 @@ endfunction
 Plug 'mhinz/vim-startify'
 
 Plug 'editorconfig/editorconfig-vim'
+Plug 'embear/vim-localvimrc'
 
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'

@@ -156,7 +156,8 @@ au Filetype man setlocal nonumber
 
 " Minimum indenting for source code
 au FileType java,cpp,c,cs let g:detectindent_min_indent = 4
-au BufReadPost *.java :DetectIndent
+" Consider using localvimrc config file or editorconfig instead
+"au BufReadPost *.java :DetectIndent
 
 au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
 au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
@@ -166,6 +167,8 @@ au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some plugin-specific settings
+
+let g:localvimrc_persistent = 1
 
 au FileType markdown call RagtagInit()
 
