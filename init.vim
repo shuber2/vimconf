@@ -154,25 +154,15 @@ au Filetype mail syn match Statement /^\s*-*\s*8<\s*-*\s*$/
 " Line wrap crippled with numbers shown
 au Filetype man setlocal nonumber
 
-" Java completion
-au FileType java setlocal omnifunc=javacomplete#Complete
-au FileType java JCEnable
-" See https://github.com/artur-shaik/vim-Javacomplete2
-" <C-j>ji <leader>ji
-nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-" <C-j>ii <leader>jii
-nmap <F5> <Plug>(JavaComplete-Imports-Add)
-imap <F5> <Plug>(JavaComplete-Imports-Add)
-" <C-j>I <leader>jI
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-" <C-j>R <leader>jR
-nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-
 " Minimum indenting for source code
 au FileType java,cpp,c,cs let g:detectindent_min_indent = 4
+au BufReadPost *.java :DetectIndent
+
+au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
+au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
+
+au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
+au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some plugin-specific settings
@@ -181,13 +171,6 @@ au FileType markdown call RagtagInit()
 
 let g:detectspelllang_langs = {}
 let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
-au BufReadPost *.java :DetectIndent
-
-au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
-au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
-
-au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
-au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
 
 :let g:org_todo_keywords = [['TODO(t)', 'WAITING(w)', '|', 'DONE(d)'],
       \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
@@ -197,6 +180,23 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/',
       \ 'template_path': '~/.vim/vimwiki/templates',
       \ 'template_default': 'default',
       \ 'template_ext': '.html'}]
+
+" Java completion
+au FileType java setlocal omnifunc=javacomplete#Complete
+au FileType java JCEnable
+" See https://github.com/artur-shaik/vim-Javacomplete2
+" <C-j>ji <leader>ji
+au FileType java nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+au FileType java imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+" <C-j>ii <leader>jii
+au FileType java nmap <F5> <Plug>(JavaComplete-Imports-Add)
+au FileType java imap <F5> <Plug>(JavaComplete-Imports-Add)
+" <C-j>I <leader>jI
+au FileType java nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+au FileType java imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+" <C-j>R <leader>jR
+au FileType java nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+au FileType java imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
