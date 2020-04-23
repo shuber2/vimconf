@@ -6,6 +6,8 @@
 " Some global settings
 
 set nocompatible
+" Breaks colors for some versions of mosh, but not if tmux is used on top of
+" mosh. See https://github.com/mobile-shell/mosh/issues/928
 set termguicolors
 set number
 set cursorline
