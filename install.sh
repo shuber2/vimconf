@@ -4,6 +4,10 @@ set -e
 
 check_vim()
 {
+    if /usr/bin/vim --version | grep -q "NVIM"; then
+        return
+    fi
+
     if /usr/bin/vim --version | grep -q "$1"; then
         echo "vim has support for $1."
     else
@@ -38,7 +42,6 @@ check_font()
         echo "Font $1 found."
     else
         echo "Font $1 not found. Either install it or clear g:enable_plugin_devicons."
-        exit
     fi
 }
 
