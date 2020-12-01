@@ -38,13 +38,6 @@ set wildmode=longest,list:full
 
 set tabpagemax=100
 
-" Some terminals cause weired symbols due to broken cursor-shape termcodes.
-if has('nvim')
-    "set guicursor=
-    " Workaround some broken plugins which set guicursor indiscriminately.
-    "au OptionSet guicursor noautocmd set guicursor=
-end
-
 syntax on
 
 " Load some macros
