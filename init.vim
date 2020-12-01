@@ -167,6 +167,7 @@ au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
 
 au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
 au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
+au BufNewFile *.{h,hpp,hxx} call AddIncludeGuards()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some plugin-specific settings

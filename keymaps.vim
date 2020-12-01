@@ -19,7 +19,6 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 au Filetype c,cpp,objc map <buffer> <F11> :vsplit<CR>:FSRight<CR>
 au Filetype c,cpp,objc map <buffer> <S-F11> :FSHere<CR>
-au BufNewFile *.{h,hpp,hxx} call AddIncludeGuards()
 
 au Filetype markdown map <buffer> <F5> :call RunMarkdown()<CR>
 
