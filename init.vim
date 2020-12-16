@@ -137,6 +137,9 @@ let g:vim_markdown_math=1
 
 au FileType text,markdown,mail,tex,gitcommit,mediawiki,vimwiki setlocal spell
 au FileType text,markdown,mail,gitcommit,mediawiki,vimwiki setlocal fo+=n
+au Filetype mail setlocal formatoptions+=o
+" Add | for block quotation, such that gq respects it
+au Filetype mail setlocal comments+=n:\|
 
 au Filetype go setlocal shiftwidth=8 tabstop=8 noexpandtab
 au Filetype tex setlocal shiftwidth=2 tabstop=2
