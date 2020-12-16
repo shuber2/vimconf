@@ -76,6 +76,10 @@ Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 Plug 'lambdalisue/vim-manpager', {'on': 'MANPAGER'}
 
 Plug 'dbeniamine/vim-mail'
+" Costs a second startup time
+Plug 'dbeniamine/cheat.sh-vim', {'on': ['Cheat']}
+
+Plug 'dstein64/vim-startuptime'
 
 if filereadable($HOME . '/.vim/plugins-local.vim')
   source ~/.vim/plugins-local.vim
