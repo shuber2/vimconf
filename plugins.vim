@@ -75,6 +75,8 @@ Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 
 Plug 'lambdalisue/vim-manpager', {'on': 'MANPAGER'}
 
+Plug 'dbeniamine/vim-mail'
+
 if filereadable($HOME . '/.vim/plugins-local.vim')
   source ~/.vim/plugins-local.vim
 endif

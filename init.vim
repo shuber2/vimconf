@@ -174,6 +174,7 @@ au FileType markdown call RagtagInit()
 
 let g:detectspelllang_langs = {}
 let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
+au FileType mail let g:VimMailSpellLangs=['de', 'en']
 
 :let g:org_todo_keywords = [['TODO(t)', 'WAITING(w)', '|', 'DONE(d)'],
       \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
@@ -201,6 +202,12 @@ au FileType java imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
 au FileType java nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 au FileType java imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
+let g:VimMailContactsProvider=['khard']
+let g:VimMailContactsCommands={
+    \'khard':
+    \{ 'query' : "khard email --parsable --search-in-source-files",
+        \'sync': "/bin/true"}
+  \}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
