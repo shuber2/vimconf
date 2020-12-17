@@ -31,6 +31,7 @@ set smartindent
 set incsearch
 set hlsearch
 
+set foldcolumn=4
 set colorcolumn=+1
 set mouse=a
 set wildmenu
@@ -164,6 +165,11 @@ au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
 au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
 au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
 au BufNewFile *.{h,hpp,hxx} call AddIncludeGuards()
+
+augroup autofoldcolumn
+  au!
+  au CursorHold,BufWinEnter * AutoOrigamiFoldColumn
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some plugin-specific settings

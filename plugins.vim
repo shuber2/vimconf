@@ -15,6 +15,8 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
 
+Plug 'benknoble/vim-auto-origami'
+
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'scrooloose/nerdcommenter'
