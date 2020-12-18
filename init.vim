@@ -190,6 +190,7 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/',
       \ 'template_path': '~/.vim/vimwiki/templates',
       \ 'template_default': 'default',
       \ 'template_ext': '.html'}]
+let g:vimwiki_global_ext = 0
 
 " Java completion
 au FileType java setlocal omnifunc=javacomplete#Complete
