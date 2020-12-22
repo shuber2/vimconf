@@ -21,6 +21,7 @@ au Filetype c,cpp,objc map <buffer> <F11> :vsplit<CR>:FSRight<CR>
 au Filetype c,cpp,objc map <buffer> <S-F11> :FSHere<CR>
 
 au Filetype markdown map <buffer> <F5> :call RunMarkdown()<CR>
+au Filetype asciidoc map <buffer> <F5> :call RunAsciidoc()<CR>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 vmap <Enter> <Plug>(EasyAlign)

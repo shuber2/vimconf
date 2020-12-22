@@ -102,6 +102,11 @@ function RunMarkdownpy(prog)
 endfunction
 
 
+function RunAsciidoctor()
+  execute ":!asciidoctor " . @%
+endfunction
+
+
 function RunMarkdown()
   if executable("pandoc")
     call RunPandoc()
@@ -111,6 +116,15 @@ function RunMarkdown()
     call RunMarkdownpy("markdown_py")
   else
     echo "No markdown implementation found."
+  endif
+endfunction
+
+
+function RunAsciidoc()
+  if executable("asciidoctor")
+    call RunAsciidoctor()
+  else
+    echo "No asciidoc implementation found."
   endif
 endfunction
 
