@@ -31,6 +31,7 @@ Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'lvht/tagbar-markdown', {'for': 'markdown'}
+Plug 'habamax/vim-asciidoctor', {'for': 'asciidoc'}
 
 Plug 'PProvost/vim-markdown-jekyll', {'for': 'markdown'}
 Plug 'tpope/vim-liquid', {'for': ['liquid', 'html', 'xml', 'markdown']}

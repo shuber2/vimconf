@@ -141,8 +141,6 @@ au FileType text,markdown,asciidoc,mail,gitcommit,mediawiki,vimwiki setlocal for
 au Filetype mail setlocal formatoptions+=o
 " Add | for block quotation, such that gq respects it
 au Filetype mail setlocal comments+=n:\|,
-" Add ordered lists via .
-au Filetype asciidoc setlocal comments+=fb:.,
 
 au Filetype go setlocal shiftwidth=8 tabstop=8 noexpandtab
 au Filetype tex setlocal shiftwidth=2 tabstop=2
