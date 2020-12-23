@@ -32,6 +32,8 @@ set incsearch
 set hlsearch
 
 set foldcolumn=4
+set foldlevelstart=20
+
 set colorcolumn=+1
 set mouse=a
 set wildmenu
@@ -128,7 +130,6 @@ au InsertEnter * call deoplete#enable()
   "au FileType tex          call pencil#init()
 "augroup END
 
-let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
 
