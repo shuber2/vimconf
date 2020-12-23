@@ -196,19 +196,6 @@ let g:vimwiki_global_ext = 0
 " Java completion
 au FileType java setlocal omnifunc=javacomplete#Complete
 au FileType java JCEnable
-" See https://github.com/artur-shaik/vim-Javacomplete2
-" <C-j>ji <leader>ji
-au FileType java nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-au FileType java imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-" <C-j>ii <leader>jii
-au FileType java nmap <F5> <Plug>(JavaComplete-Imports-Add)
-au FileType java imap <F5> <Plug>(JavaComplete-Imports-Add)
-" <C-j>I <leader>jI
-au FileType java nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-au FileType java imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-" <C-j>R <leader>jR
-au FileType java nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-au FileType java imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 let g:VimMailContactsProvider=['khard']
 let g:VimMailContactsCommands={
