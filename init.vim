@@ -15,6 +15,7 @@ set scrolloff=5
 
 set encoding=utf-8
 
+set fillchars=vert:│,fold:\ 
 set listchars=tab:»­,trail:·,eol:$
 set virtualedit=block
 
@@ -204,6 +205,8 @@ let g:VimMailContactsCommands={
         \'sync': "/bin/true"}
   \}
 
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_levelmarker = '➜'
 
 " The denite settings are largely stolen from spacevim
 let s:denite_options = {

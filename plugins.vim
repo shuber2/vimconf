@@ -16,6 +16,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
 
 Plug 'benknoble/vim-auto-origami'
+" Prevent slow foling update, e.g., for vimtex
+Plug 'Konfekt/FastFold'
 
 Plug 'scrooloose/nerdcommenter'
 
