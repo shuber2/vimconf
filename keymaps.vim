@@ -1,6 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Global settings
 
+nnoremap <C-p> :Denite file/rec<cr>
+nnoremap <space>/ :Denite grep:.<cr>
+nnoremap <space>s :Denite buffer<cr>
+
 nnoremap <C-space> pumvisible() ? "\<c-n>" : "\<tab>"
 
 nnoremap <F2> :NERDTreeToggle<cr>

@@ -17,8 +17,6 @@ Plug 'airblade/vim-rooter'
 
 Plug 'benknoble/vim-auto-origami'
 
-Plug 'ctrlpvim/ctrlp.vim'
-
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -46,8 +44,11 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/denite.nvim'
+
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
