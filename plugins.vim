@@ -81,7 +81,7 @@ Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 
 Plug 'lambdalisue/vim-manpager', {'on': 'MANPAGER'}
 
-Plug 'https://gitlab.com/shuber2/vim-mail', {'branch': 'refactor-mailcmd'}
+Plug 'https://gitlab.com/dbeniamine/vim-mail'
 " Costs a second startup time
 Plug 'dbeniamine/cheat.sh-vim', {'on': ['Cheat']}
 
