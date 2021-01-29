@@ -120,7 +120,10 @@ let g:clang_compilation_database = '.'
 let g:python3_host_prog = '/usr/bin/python3'
 " deoplete requires huge startuptime. Delay loading upon first InsertEnter.
 let g:deoplete#enable_at_startup = 0
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option({
+                            \ 'smart_case' : v:true,
+                            \ 'auto_refresh_delay' : 100,
+                            \ })
 au InsertEnter * call deoplete#enable()
 
 "augroup pencil
