@@ -296,6 +296,9 @@ let s:normal_mode_mappings = [
       \ ['r', '<denite:redraw>', 'noremap'],
       \ ]
 
+" termdebug split windows
+let g:termdebug_wide=1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 runtime keymaps.vim
