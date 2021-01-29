@@ -181,6 +181,8 @@ augroup END
 
 let g:localvimrc_persistent = 1
 
+let g:fastfold_minlines = 0
+
 au FileType markdown call RagtagInit()
 
 let g:detectspelllang_langs = {}
