@@ -10,6 +10,11 @@ function TexTransUmlaute()
   execute ':%s/²/\^2/&'
 endfunction
 
+function! s:texTableBfEntries()
+    execute 's/\( *\)\([^ &][^&]*[^ &]\)\( \+\)/\1\\textbf{\2}\3/g'
+endfunction
+
+command! -range TexTableBfEntries call s:texTableBfEntries()
 
 "Open current file with a specific program
 function OpenIn(prog)
