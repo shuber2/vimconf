@@ -304,7 +304,8 @@ let s:normal_mode_mappings = [
       \ ]
 
 " termdebug split windows
-let g:termdebug_wide=1
+let g:termdebug_wide = 1
+let termdebugger = $HOME . '/.vim/gdb.sh'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
