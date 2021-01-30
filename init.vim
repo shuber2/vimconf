@@ -6,9 +6,6 @@
 " Some global settings
 
 set nocompatible
-" Breaks colors for some versions of mosh, but not if tmux is used on top of
-" mosh. See https://github.com/mobile-shell/mosh/issues/928
-set termguicolors
 set number
 set cursorline
 set scrolloff=5
@@ -94,8 +91,18 @@ let g:airline#extensions#branch#enabled=1
 
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_italic = 1
 set bg=dark
+
+if &term =~ 'linux'
+    let g:gruvbox_termcolors=16
+else
+    " Setting termguicolors has two implications:
+    " - Breaks colors for some versions of mosh, but not if tmux is used on top of
+    "   mosh. See https://github.com/mobile-shell/mosh/issues/928
+    " - Breaks some colors in :terminal, e.g., when launching gdb in vim.
+    set termguicolors
+    let g:gruvbox_italic = 1
+endif
 colorscheme gruvbox
 
 " let NERDTreeWinPos="right"
