@@ -87,6 +87,8 @@ Plug 'dbeniamine/cheat.sh-vim', {'on': ['Cheat']}
 
 Plug 'dstein64/vim-startuptime'
 
+Plug 'romainl/vim-cool'
+
 if filereadable($HOME . '/.vim/plugins-local.vim')
   source ~/.vim/plugins-local.vim
 endif
