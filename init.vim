@@ -177,6 +177,8 @@ au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
 au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
 au BufNewFile *.{h,hpp,hxx} call AddIncludeGuards()
 
+au FileType cpp,c packadd termdebug
+
 augroup autofoldcolumn
   au!
   au CursorHold,BufWinEnter * AutoOrigamiFoldColumn
