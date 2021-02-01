@@ -77,13 +77,14 @@ install() {
     ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
     ln -s $HOME/.vim $HOME/.config/nvim
 
-    echo ""
-    echo "vim-startify may complain about invalid viminfo file. It will"
-    echo "disappear once you opened the first file."
-    echo ""
-    echo "Add this line to your shell configuration, e.g., ~/.profile, to"
-    echo "use vim as man pager:"
-    echo "  export MANPAGER=\"view -c MANPAGER -\""
+    cat << EOF
+At the first start the plugins will be installed. Hence, at the first
+start the plugin provided colorscheme is not available yet.
+
+Add this line to your shell configuration, e.g., ~/.profile, to
+use vim as man pager:
+  export MANPAGER=\"view -c MANPAGER -\"
+EOF
 }
 
 
