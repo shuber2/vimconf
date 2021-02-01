@@ -9,7 +9,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'embear/vim-localvimrc'
 
 Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
