@@ -89,6 +89,8 @@ Plug 'dstein64/vim-startuptime'
 
 Plug 'romainl/vim-cool'
 
+Plug 'flwyd/vim-conjoin'
+
 if filereadable($HOME . '/.vim/plugins-local.vim')
   source ~/.vim/plugins-local.vim
 endif
