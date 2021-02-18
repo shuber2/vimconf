@@ -83,7 +83,7 @@ Plug 'lambdalisue/vim-manpager', {'on': 'MANPAGER'}
 
 Plug 'https://gitlab.com/dbeniamine/vim-mail'
 " Costs a second startup time
-Plug 'dbeniamine/cheat.sh-vim', {'on': ['Cheat']}
+Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 
 Plug 'dstein64/vim-startuptime'
 
