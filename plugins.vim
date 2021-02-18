@@ -91,6 +91,8 @@ Plug 'romainl/vim-cool'
 
 Plug 'flwyd/vim-conjoin'
 
+Plug 'sjl/splice.vim', {'on': 'SpliceInit'}
+
 if filereadable($HOME . '/.vim/plugins-local.vim')
   source ~/.vim/plugins-local.vim
 endif
