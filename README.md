@@ -1,10 +1,19 @@
 # A modular vim configuration
 
-This is my personal vim configuration that is partly inspired by SpaceVim. It
-is compatible to vim, gvim (8.0+) and neovim (0.2+). The configuration is split
-up into multiple files such that personal customization is separated from
-boilerplate code.
+This is my personal vim configuration that is partly inspired by
+[SpaceVim](https://spacevim.org/). It is compatible to vim, gvim (8.0+) and
+neovim (0.2+). The configuration is split up into multiple files such that
+personal customization is separated from boilerplate code.
 
+![A demo screenshot](https://www.sthu.org/code/codesnippets/img/vimconf-start-plugin.png)
+
+
+<div class="hideonwebsite">
+This repository is a replication of the repository <a
+href="https://git.sthu.org/?p=vimconf.git;a=summary">here</a>. The <a
+href="https://www.sthu.org/code/codesnippets/vimconf.html">website</a> gives
+further details and more screenshots.
+</div>
 
 ## Installation
 
@@ -30,14 +39,14 @@ neovim does. You also want to make sure that you have curl and git installed.
 ### Clone & install
 
 If you already have a vim configuration in place then you may first move your
-~/.vim directory first
+`~/.vim` directory first
 
 ````
 mv ~/.vim ~/.vim-old
 ````
 
-Assumung that there is ~/.vim anymore, simply clone this repository into ~/.vim
-and invoke install.sh therein.
+Assuming that there is no `~/.vim` anymore, simply clone this repository into
+`~/.vim` and invoke `install.sh` therein.
 
 ````
 git clone https://git.sthu.org/repos/vimconf.git ~/.vim
@@ -45,14 +54,14 @@ git clone https://git.sthu.org/repos/vimconf.git ~/.vim
 ````
 
 This install script creates backups of existing configuration files (e.g.,
-~/.vimrc) and then creates symlinks to configuration files in ~/.vim.
+`~/.vimrc`) and then creates symlinks to configuration files in `~/.vim`.
 
 
 ## Specialization for local machines
 
-I personally would like to have the same vim configuration on all my accounts.
-Still, on certain machines I would like to personalize and specialize the
-configuration. The following files are read if existent:
+I personally would like to have the same vim configuration on all my user
+accounts. Still, on certain machines I would like to personalize and specialize
+the configuration. The following files are sourced if existent:
 
   - plugins-local.vim
   - macros-local.vim
