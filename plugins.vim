@@ -54,6 +54,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+" java extension to deoplete
+Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -69,8 +71,6 @@ Plug 'roryokane/detectindent'
 Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'objc']}
 Plug 'ludovicchabant/vim-gutentags', {'for': ['c', 'cpp', 'objc']}
 "Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
-
-Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
