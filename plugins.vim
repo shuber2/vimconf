@@ -93,6 +93,8 @@ Plug 'flwyd/vim-conjoin'
 
 Plug 'sjl/splice.vim', {'on': 'SpliceInit'}
 
+Plug 'sheerun/vim-polyglot'
+
 if filereadable($HOME . '/.vim/plugins-local.vim')
   source ~/.vim/plugins-local.vim
 endif
