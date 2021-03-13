@@ -88,6 +88,8 @@ Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 Plug 'dstein64/vim-startuptime'
 
 Plug 'romainl/vim-cool'
+" Make . more useful after a plugin map
+Plug 'tpope/vim-repeat'
 
 Plug 'flwyd/vim-conjoin'
 
