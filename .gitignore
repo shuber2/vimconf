@@ -3,3 +3,6 @@ init-local.vim
 keymaps-local.vim
 macros-local.vim
 plugins-local.vim
+*.swp
+neosnippets/mail.snip
+spell/
