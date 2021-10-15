@@ -78,9 +78,12 @@ endfunction
 
 
 function InsertIncludeGuardsWithoutEndif()
-  let gatename = substitute(expand("%:t"), "\\.", "_", "g") . '_' . strpart(system('pwgen -c 16 1'), 0, 16)
-  execute "normal! i#ifndef " . gatename
-  execute "normal!   o#define " . gatename
+  " Build name of guard: Take filename, replace some chars by _ and
+  " prepend a random sequence to make guard robust against file name
+  " collisions.
+  let guardname = substitute(expand("%:t"), "[\\.-]", "_", "g") . '_' . strpart(system('pwgen -c 16 1'), 0, 16)
+  execute "normal! i#ifndef " . guardname
+  execute "normal! o#define " . guardname
 endfunction
 
 
