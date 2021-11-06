@@ -38,7 +38,7 @@ Plug 'tpope/vim-liquid', {'for': ['liquid', 'html', 'xml', 'markdown']}
 
 Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'hail2u/vim-css3-syntax', {'for': ['scss', 'css']}
-Plug 'ap/vim-css-color', {'for': ['scss', 'css']}
+Plug 'gko/vim-coloresque'
 
 Plug 'tpope/vim-ragtag'
 
