@@ -54,7 +54,8 @@ au FileType java imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some plugin-specific settings
 
-
+" Add :imap to :map of plugin
+imap <C-l> <Plug>Unicoder
 
 
 if filereadable($HOME . '/.vim/keymaps-local.vim')

@@ -21,6 +21,8 @@ Plug 'Konfekt/FastFold'
 
 Plug 'scrooloose/nerdcommenter'
 
+Plug 'joom/latex-unicoder.vim'
+
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
