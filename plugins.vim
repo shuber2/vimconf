@@ -19,15 +19,10 @@ Plug 'joom/latex-unicoder.vim', {'on': '<Plug>Unicoder'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'ryanoasis/vim-devicons', Cond(g:enable_plugin_devicons)
 
-Plug 'neomake/neomake'
-Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-
 Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
 Plug 'roryokane/detectindent'
 
 Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'objc']}
-Plug 'ludovicchabant/vim-gutentags', {'for': ['c', 'cpp', 'objc']}
-"Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
 
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
@@ -47,26 +42,16 @@ Plug 'tpope/vim-repeat'
 
 Plug 'flwyd/vim-conjoin'
 
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'Shougo/denite.nvim'
-
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 if $USER != "root"
+  Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+
+  Plug 'ludovicchabant/vim-gutentags', {'for': ['c', 'cpp', 'objc']}
+  "Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
+
   Plug 'editorconfig/editorconfig-vim'
   Plug 'embear/vim-localvimrc'
 
-  Plug 'mhinz/vim-signify'
-  Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-rooter'
-
   Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
   Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
@@ -76,34 +61,54 @@ if $USER != "root"
   Plug 'PProvost/vim-markdown-jekyll', {'for': 'markdown'}
   Plug 'tpope/vim-liquid', {'for': ['liquid', 'html', 'xml', 'markdown']}
 
-  Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
-  Plug 'hail2u/vim-css3-syntax', {'for': ['scss', 'css']}
-  Plug 'gko/vim-coloresque'
-
   Plug 'tpope/vim-ragtag'
-
-  Plug 'lervag/vimtex', {'for': 'tex'}
-
-  " java extension to deoplete
-  Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 
   Plug 'Shougo/neosnippet.vim'
   Plug 'Shougo/neosnippet-snippets'
 
   Plug 'tpope/vim-speeddating'
-  Plug 'jceb/vim-orgmode', {'for': ['org']}
-  Plug 'vimwiki/vimwiki'
   Plug 'mattn/calendar-vim'
 
   " Costs a second startup time
   Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 
-  Plug 'sjl/splice.vim', {'on': 'SpliceInit'}
 
-  if has('nvim-0.5')
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  else
-    Plug 'sheerun/vim-polyglot'
+  if g:lowendbox == 0
+    if has('nvim')
+      Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+      Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+      Plug 'Shougo/deoplete.nvim'
+      Plug 'Shougo/denite.nvim'
+
+      Plug 'roxma/nvim-yarp'
+      Plug 'roxma/vim-hug-neovim-rpc'
+    endif
+
+    " java extension to deoplete
+    Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
+
+    Plug 'neomake/neomake'
+
+    Plug 'lervag/vimtex', {'for': 'tex'}
+
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'gko/vim-coloresque'
+
+    Plug 'vimwiki/vimwiki'
+    Plug 'jceb/vim-orgmode', {'for': ['org']}
+
+    Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
+    Plug 'hail2u/vim-css3-syntax', {'for': ['scss', 'css']}
+
+    Plug 'sjl/splice.vim', {'on': 'SpliceInit'}
+
+    if has('nvim-0.5')
+      Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    else
+      Plug 'sheerun/vim-polyglot'
+    endif
   endif
 endif
 

@@ -44,6 +44,12 @@ syntax on
 " Load some macros
 runtime macros.vim
 
+if filereadable($HOME . '/.vim/lowendbox')
+    let g:lowendbox = 1
+else
+    let g:lowendbox = 0
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some global plugin settings
 
@@ -110,27 +116,28 @@ let NERDTreeWinSize=22
 let NERDTreeQuitOnOpen=1
 "au VimEnter * if !argc() | Startify | NERDTree | wincmd w
 
-let g:neomake_c_enabled_makers = ['clangtidy', 'clangcheck']
-let g:neomake_cpp_enabled_makers = ['clangtidy', 'clangcheck']
+if $USER != "root" && g:lowendbox == 0
+    let g:neomake_c_enabled_makers = ['clangtidy', 'clangcheck']
+    let g:neomake_cpp_enabled_makers = ['clangtidy', 'clangcheck']
+    let g:clang_compilation_database = '.'
 
-" Taken from neomake
-if OnBattery()
-  call neomake#configure#automake('w')
-else
-  call neomake#configure#automake('nw', 1000)
+    " Taken from neomake
+    if OnBattery()
+        call neomake#configure#automake('w')
+    else
+        call neomake#configure#automake('nw', 1000)
+    endif
+
+    " Speedup deoplete startup time, see deoplete FAQ
+    let g:python3_host_prog = '/usr/bin/python3'
+    " deoplete requires huge startuptime. Delay loading upon first InsertEnter.
+    let g:deoplete#enable_at_startup = 0
+    call deoplete#custom#option({
+                \ 'smart_case' : v:true,
+                \ 'auto_refresh_delay' : 100,
+                \ })
+    au InsertEnter * call deoplete#enable()
 endif
-
-let g:clang_compilation_database = '.'
-
-" Speedup deoplete startup time, see deoplete FAQ
-let g:python3_host_prog = '/usr/bin/python3'
-" deoplete requires huge startuptime. Delay loading upon first InsertEnter.
-let g:deoplete#enable_at_startup = 0
-call deoplete#custom#option({
-                            \ 'smart_case' : v:true,
-                            \ 'auto_refresh_delay' : 100,
-                            \ })
-au InsertEnter * call deoplete#enable()
 
 "augroup pencil
   "au!
@@ -308,26 +315,28 @@ let s:normal_mode_mappings = [
 let g:termdebug_wide = 1
 let termdebugger = $HOME . '/.vim/gdb.sh'
 
-if has('nvim-0.5') && $USER != "root"
+if g:lowendbox == 0
+    if has('nvim-0.5') && $USER != "root"
 lua <<EOF
-    require'nvim-treesitter.configs'.setup {
-        -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-        ensure_installed = "maintained",
-        -- List of parsers to ignore installing
-        ignore_install = { },
-        -- Modules and its options go here
-        highlight = {
-          enable = true,
-          disabled = {}
-        },
-        incremental_selection = {
-          enable = true
-        },
-        textobjects = {
-          enable = true
+        require'nvim-treesitter.configs'.setup {
+            -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+            ensure_installed = "maintained",
+            -- List of parsers to ignore installing
+            ignore_install = { },
+            -- Modules and its options go here
+            highlight = {
+              enable = true,
+              disabled = {}
+            },
+            incremental_selection = {
+              enable = true
+            },
+            textobjects = {
+              enable = true
+            }
         }
-  }
 EOF
+    endif
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
