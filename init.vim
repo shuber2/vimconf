@@ -232,6 +232,33 @@ let g:vimtex_fold_levelmarker = '➜'
 let g:termdebug_wide = 1
 let termdebugger = $HOME . '/.vim/gdb.sh'
 
+
+let g:startify_files_number = 5
+let g:startify_session_persistence = 1
+let g:startify_lists = [
+            \ { 'type': 'dir',       'header': ['   Recent files'] },
+            \ { 'type': 'sessions',  'header': ['   Saved sessions'] },
+            \ ]
+
+if has('nvim')
+    let g:startify_custom_header = [
+                \ '',
+                \ '        ╻ ╻   ╻   ┏┳┓',
+                \ '   NEO  ┃┏┛   ┃   ┃┃┃',
+                \ '        ┗┛    ╹   ╹ ╹',
+                \ '',
+                \ ]
+else
+    let g:startify_custom_header = [
+                \ '',
+                \ '   ╻ ╻   ╻   ┏┳┓',
+                \ '   ┃┏┛   ┃   ┃┃┃',
+                \ '   ┗┛    ╹   ╹ ╹',
+                \ '',
+                \ ]
+endif
+
+
 if $USER != "root" && g:lowendbox == 0
 
     " The denite settings are largely stolen from spacevim
