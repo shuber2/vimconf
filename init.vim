@@ -232,7 +232,6 @@ let g:vimtex_fold_levelmarker = '➜'
 let g:termdebug_wide = 1
 let termdebugger = $HOME . '/.vim/gdb.sh'
 
-
 let g:startify_files_number = 5
 let g:startify_session_persistence = 1
 let g:startify_lists = [
@@ -241,19 +240,21 @@ let g:startify_lists = [
             \ ]
 
 if has('nvim')
+    let verstr = matchstr(execute('version'), 'NVIM v\zs[^\n]*')
     let g:startify_custom_header = [
                 \ '',
                 \ '        ╻ ╻   ╻   ┏┳┓',
                 \ '   NEO  ┃┏┛   ┃   ┃┃┃',
-                \ '        ┗┛    ╹   ╹ ╹',
+                \ '        ┗┛    ╹   ╹ ╹  ' . verstr,
                 \ '',
                 \ ]
 else
+    let verstr = matchstr(execute('version'), 'IMproved \zs[^\n ]*')
     let g:startify_custom_header = [
                 \ '',
                 \ '   ╻ ╻   ╻   ┏┳┓',
                 \ '   ┃┏┛   ┃   ┃┃┃',
-                \ '   ┗┛    ╹   ╹ ╹',
+                \ '   ┗┛    ╹   ╹ ╹  ' . verstr,
                 \ '',
                 \ ]
 endif
