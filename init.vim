@@ -308,7 +308,7 @@ let s:normal_mode_mappings = [
 let g:termdebug_wide = 1
 let termdebugger = $HOME . '/.vim/gdb.sh'
 
-if has('nvim-0.5')
+if has('nvim-0.5') && $USER != "root"
 lua <<EOF
     require'nvim-treesitter.configs'.setup {
         -- one of "all", "maintained" (parsers with maintainers), or a list of languages
