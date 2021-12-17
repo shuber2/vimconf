@@ -3,8 +3,6 @@ function! Cond(cond, ...)
     return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
 endfunction
 
-Plug 'mhinz/vim-startify'
-
 Plug 'vim-airline/vim-airline'
 Plug 'gruvbox-community/gruvbox'
 
@@ -73,6 +71,9 @@ if $USER != "root"
     Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 
     if g:lowendbox == 0
+
+        Plug 'mhinz/vim-startify'
+
         if has('nvim')
             Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
             Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
