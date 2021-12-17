@@ -308,6 +308,28 @@ let s:normal_mode_mappings = [
 let g:termdebug_wide = 1
 let termdebugger = $HOME . '/.vim/gdb.sh'
 
+if has('nvim-0.5')
+lua <<EOF
+    require'nvim-treesitter.configs'.setup {
+        -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+        ensure_installed = "maintained",
+        -- List of parsers to ignore installing
+        ignore_install = { },
+        -- Modules and its options go here
+        highlight = {
+          enable = true,
+          disabled = {}
+        },
+        incremental_selection = {
+          enable = true
+        },
+        textobjects = {
+          enable = true
+        }
+  }
+EOF
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 runtime keymaps.vim
