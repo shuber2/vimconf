@@ -44,74 +44,7 @@ Plug 'tpope/vim-repeat'
 Plug 'flwyd/vim-conjoin'
 
 if $USER != "root"
-    Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-
-    Plug 'ludovicchabant/vim-gutentags', {'for': ['c', 'cpp', 'objc']}
-    "Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
-
-    Plug 'editorconfig/editorconfig-vim'
-    Plug 'embear/vim-localvimrc'
-
-    Plug 'airblade/vim-rooter'
-    Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
-
-    Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-    Plug 'lvht/tagbar-markdown', {'for': 'markdown'}
-    Plug 'habamax/vim-asciidoctor', {'for': 'asciidoc'}
-
-    Plug 'PProvost/vim-markdown-jekyll', {'for': 'markdown'}
-    Plug 'tpope/vim-liquid', {'for': ['liquid', 'html', 'xml', 'markdown']}
-
-    Plug 'tpope/vim-ragtag'
-
-    Plug 'Shougo/neosnippet.vim'
-    Plug 'Shougo/neosnippet-snippets'
-
-    Plug 'tpope/vim-speeddating'
-    Plug 'mattn/calendar-vim'
-
-    " Costs a second startup time
-    Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
-
-    if g:lowendbox == 0
-
-        if has('nvim')
-            Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-            Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-        else
-            Plug 'Shougo/deoplete.nvim'
-            Plug 'Shougo/denite.nvim'
-
-            Plug 'roxma/nvim-yarp'
-            Plug 'roxma/vim-hug-neovim-rpc'
-        endif
-
-        " java extension to deoplete
-        Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
-
-        Plug 'neomake/neomake'
-
-        Plug 'lervag/vimtex', {'for': 'tex'}
-
-        Plug 'mhinz/vim-signify'
-        Plug 'tpope/vim-fugitive'
-        Plug 'gko/vim-coloresque'
-
-        Plug 'vimwiki/vimwiki'
-        Plug 'jceb/vim-orgmode', {'for': ['org']}
-
-        Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
-        Plug 'hail2u/vim-css3-syntax', {'for': ['scss', 'css']}
-
-        Plug 'sjl/splice.vim', {'on': 'SpliceInit'}
-
-        if has('nvim-0.5')
-            Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-            Plug 'nvim-treesitter/nvim-treesitter-refactor', {'do': ':TSUpdate'}
-        else
-            Plug 'sheerun/vim-polyglot'
-        endif
-    endif
+    source ~/.vim/plugins-noroot.vim
 endif
 
 if filereadable($HOME . '/.vim/plugins-local.vim')
