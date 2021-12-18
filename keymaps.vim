@@ -40,7 +40,9 @@ nmap ga <Plug>(EasyAlign)
 au Filetype gnuplot map <buffer> <F5> :call OpenIn("gnuplot -persist") <CR>
 
 au Filetype c,cpp,objc map <buffer> <F11> :vsplit<CR>:FSRight<CR>
+" Terminal-based vi report S-F11 as F23
 au Filetype c,cpp,objc map <buffer> <S-F11> :FSHere<CR>
+au Filetype c,cpp,objc map <buffer> <F23> :FSHere<CR>
 
 au Filetype markdown map <buffer> <F5> :call RunMarkdown()<CR>
 au Filetype asciidoc map <buffer> <F5> :call RunAsciidoc()<CR>
