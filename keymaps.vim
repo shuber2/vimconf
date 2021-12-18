@@ -6,7 +6,7 @@ if has('clipboard')
     " override plugin keymaps.
     autocmd VimEnter * vnoremap <C-c> "+y
     autocmd VimEnter * vnoremap <C-x> "+x
-    autocmd VimEnter * nnoremap <C-v> "+p
+    "autocmd VimEnter * nnoremap <C-v> "+p
     autocmd VimEnter * inoremap <C-v> <c-r>+
 endif
 
