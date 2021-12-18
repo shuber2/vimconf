@@ -1,6 +1,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Global settings
 
+if has('clipboard')
+    " Ordinary ctrl+{c,x,v} using system clipboard register +. We use autocmd to
+    " override plugin keymaps.
+    autocmd VimEnter * vnoremap <C-c> "+y
+    autocmd VimEnter * vnoremap <C-x> "+x
+    autocmd VimEnter * nnoremap <C-v> :put +<cr>
+    autocmd VimEnter * inoremap <C-v> <c-r>+
+endif
+
 nnoremap <C-p> :Denite file/rec<cr>
 nnoremap <space>/ :Denite grep:.<cr>
 nnoremap <space>s :Denite buffer<cr>
