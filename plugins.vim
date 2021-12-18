@@ -4,22 +4,16 @@ function! Cond(cond, ...)
 endfunction
 
 Plug 'mhinz/vim-startify'
+Plug 'dstein64/vim-startuptime'
 
 Plug 'vim-airline/vim-airline'
 Plug 'gruvbox-community/gruvbox'
 
 Plug 'benknoble/vim-auto-origami'
-" Prevent slow foling update, e.g., for vimtex
-Plug 'Konfekt/FastFold'
 
 Plug 'scrooloose/nerdcommenter'
-
-Plug 'joom/latex-unicoder.vim', {'on': '<Plug>Unicoder'}
-
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'ryanoasis/vim-devicons', Cond(g:enable_plugin_devicons)
 
-Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
 Plug 'roryokane/detectindent'
 
 " This plugin cannot be conditionally loaded, see github issue #18
@@ -30,13 +24,7 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'thinca/vim-fontzoom'
 
-Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
-
 Plug 'lambdalisue/vim-manpager', {'on': 'MANPAGER'}
-
-Plug 'https://gitlab.com/dbeniamine/vim-mail'
-
-Plug 'dstein64/vim-startuptime'
 
 " Make . more useful after a plugin map
 Plug 'tpope/vim-repeat'

@@ -24,9 +24,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-speeddating'
 Plug 'mattn/calendar-vim'
 
-" Costs a second startup time
-Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
-
+Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 
 if g:lowendbox == 0
     source ~/.vim/plugins-noroot-nolowendbox.vim

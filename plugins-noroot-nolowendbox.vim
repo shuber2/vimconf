@@ -14,6 +14,8 @@ Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 
 Plug 'neomake/neomake'
 
+" Prevent slow foling update, e.g., for vimtex
+Plug 'Konfekt/FastFold'
 Plug 'lervag/vimtex', {'for': 'tex'}
 
 Plug 'mhinz/vim-signify'
@@ -26,7 +28,16 @@ Plug 'jceb/vim-orgmode', {'for': ['org']}
 Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'hail2u/vim-css3-syntax', {'for': ['scss', 'css']}
 
+Plug 'https://gitlab.com/dbeniamine/vim-mail'
+Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
+
+Plug 'ryanoasis/vim-devicons', Cond(g:enable_plugin_devicons)
+Plug 'joom/latex-unicoder.vim', {'on': '<Plug>Unicoder'}
+
 Plug 'sjl/splice.vim', {'on': 'SpliceInit'}
+
+" Costs a second startup time
+Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 
 if has('nvim-0.5')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
