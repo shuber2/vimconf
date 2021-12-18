@@ -39,7 +39,20 @@ nmap ga <Plug>(EasyAlign)
 
 au Filetype gnuplot map <buffer> <F5> :call OpenIn("gnuplot -persist") <CR>
 
-au Filetype c,cpp,objc map <buffer> <F11> :vsplit<CR>:FSRight<CR>
+" Performs a vertial split and a FSHere. For a header file the split is
+" performed to the left, for an implementation file to the right.
+function FSvsplit()
+    " We split to the right on header files
+    if match(expand('%:e'), 'h.*') >= 0
+        execute ':leftabove vsplit'
+    else
+        execute ':rightbelow vsplit'
+    endif
+
+    execute ':FSHere'
+endfunction
+
+au Filetype c,cpp,objc map <buffer> <F11> :call FSvsplit()<CR>
 " Terminal-based vi report S-F11 as F23
 au Filetype c,cpp,objc map <buffer> <S-F11> :FSHere<CR>
 au Filetype c,cpp,objc map <buffer> <F23> :FSHere<CR>
