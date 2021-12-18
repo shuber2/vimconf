@@ -22,7 +22,8 @@ Plug 'ryanoasis/vim-devicons', Cond(g:enable_plugin_devicons)
 Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
 Plug 'roryokane/detectindent'
 
-Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'objc']}
+" This plugin cannot be conditionally loaded, see github issue #18
+Plug 'derekwyatt/vim-fswitch' ", {'for': ['c', 'cpp', 'objc']}
 
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
