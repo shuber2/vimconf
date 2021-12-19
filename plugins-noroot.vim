@@ -1,6 +1,7 @@
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 
-Plug 'ludovicchabant/vim-gutentags', {'for': ['c', 'cpp', 'objc']}
+" Disable conditional loading to have gutentags also for tex files
+Plug 'ludovicchabant/vim-gutentags' ", {'for': ['c', 'cpp', 'objc', 'tex']}
 "Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
 
 Plug 'editorconfig/editorconfig-vim'
