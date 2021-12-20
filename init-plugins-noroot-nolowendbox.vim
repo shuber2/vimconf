@@ -82,9 +82,8 @@ let s:normal_mode_mappings = [
             \ ]
 
 " Have deoplete completion for vimtex (e.g., bibtex entries)
-call deoplete#custom#var('omni', 'input_patterns', {
-            \ 'tex': g:vimtex#re#deoplete
-            \})
+au Filetype tex call deoplete#custom#var('omni', 'input_patterns', {
+            \ 'tex': g:vimtex#re#deoplete })
 
 if has('nvim-0.5')
     set foldexpr=nvim_treesitter#foldexpr()
