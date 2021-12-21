@@ -10,6 +10,9 @@ if has('clipboard')
     autocmd VimEnter * inoremap <C-v> <c-r>+
 endif
 
+" ctrl+d as EOF exits shells and the like. Add a keymap for the same here.
+nnoremap <C-d> :q<cr>
+
 nnoremap <C-p> :Denite file/rec<cr>
 nnoremap <space>/ :Denite grep:.<cr>
 nnoremap <space>s :Denite buffer<cr>
