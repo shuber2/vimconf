@@ -96,7 +96,9 @@ lua <<EOF
         ignore_install = {},
         -- Modules and its options go here
         highlight = { enable = true },
-        indent = { enable = true },
+        -- Indentation is still quite buggy, e.g., for multi-line C comments
+        -- or for comments right after a preproc definition.
+        -- indent = { enable = true },
         textobjects = { enable = true },
         incremental_selection = {
             enable = true,
