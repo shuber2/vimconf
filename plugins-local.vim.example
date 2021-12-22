@@ -6,3 +6,33 @@ Plug 'justmao945/vim-clang', {'for': ['c', 'cpp', 'objc']}
 "Plug 'kien/tabman.vim'
 
 "Plug 'chikamichi/mediawiki.vim'
+
+function PluginsLocalConfig()
+    " Do not show diagnostic window of vim-clang
+    let g:clang_diagsopt = ''
+
+    let g:ConqueTerm_StartMessages = 0
+
+    " Reduce load on memory by updating one plugin at a time
+    "let g:plug_threads = 1
+
+    " Configuration for youcompleteme, if not using vim-clang.
+    "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+    "let g:ycm_confirm_extra_conf = 0
+    "let g:ycm_min_num_of_chars_for_completion = 2
+    "let g:ycm_collect_identifiers_from_tags_files = 1
+    "let g:ycm_autoclose_preview_window_after_completion = 1
+    "let g:ycm_key_list_select_completion = ['<Down>']
+    "nnoremap <buffer> <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    "let g:ycm_filetype_whitelist = { 'c' : 1, 'cpp' : 1, 'cs' : 1, 'objc' : 1, 'java' : 1, 'python' : 1 }
+
+    " Some terminals, like konsole, cause weired symbols (e.g., q) printed due to
+    " broken cursor-shape termcodes.
+    if has('nvim')
+        set guicursor=
+        " Workaround some broken plugins which set guicursor indiscriminately.
+        au OptionSet guicursor noautocmd set guicursor=
+    end
+endfunction
+
+" vim:ft=vim

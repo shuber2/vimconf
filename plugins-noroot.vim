@@ -27,6 +27,6 @@ Plug 'mattn/calendar-vim'
 
 Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 
-if g:lowendbox == 0
-    source ~/.vim/plugins-noroot-nolowendbox.vim
-endif
+
+function PluginsNorootConfig()
+endfunction

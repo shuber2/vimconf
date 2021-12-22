@@ -193,12 +193,6 @@ augroup END
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Some plugin-specific settings
-
-source ~/.vim/init-plugins.vim
+" Some global keymaps
 
 runtime keymaps.vim
-
-if filereadable($HOME . '/.vim/init-local.vim')
-  source ~/.vim/init-local.vim
-endif
