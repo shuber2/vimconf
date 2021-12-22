@@ -31,6 +31,14 @@ Plug 'hail2u/vim-css3-syntax', {'for': ['scss', 'css']}
 Plug 'https://gitlab.com/dbeniamine/vim-mail'
 Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
 
+" Disable devicons on linux terminal
+if $TERM == 'linux'
+    let g:enable_plugin_devicons=0
+    " Enable loading of devicons on all others
+else
+    let g:enable_plugin_devicons=1
+endif
+
 Plug 'ryanoasis/vim-devicons', Cond(g:enable_plugin_devicons)
 Plug 'joom/latex-unicoder.vim', {'on': '<Plug>Unicoder'}
 
@@ -48,6 +56,26 @@ endif
 
 
 function PluginsNorootNolowendboxConfig()
+    let g:neomake_c_enabled_makers = ['clangtidy', 'clangcheck']
+    let g:neomake_cpp_enabled_makers = ['clangtidy', 'clangcheck']
+    let g:clang_compilation_database = '.'
+
+    " Taken from neomake
+    if OnBattery()
+        call neomake#configure#automake('w')
+    else
+        call neomake#configure#automake('nw', 1000)
+    endif
+
+    " Speedup deoplete startup time, see deoplete FAQ
+    let g:python3_host_prog = '/usr/bin/python3'
+    " deoplete requires huge startuptime. Delay loading upon first InsertEnter.
+    let g:deoplete#enable_at_startup = 0
+    call deoplete#custom#option({
+                \ 'smart_case' : v:true,
+                \ 'auto_refresh_delay' : 100,
+                \ })
+    au InsertEnter * call deoplete#enable()
 
     " The denite settings are largely stolen from spacevim
     let s:denite_options = {
@@ -180,4 +208,36 @@ lua <<EOF
         }
 EOF
     endif
+
+    let g:fastfold_minlines = 0
+
+    let g:detectspelllang_langs = {}
+    let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
+
+    au FileType mail let g:VimMailSpellLangs=['de', 'en']
+    let g:VimMailContactsProvider=['khard']
+    let g:VimMailContactsCommands={
+                \'khard':
+                \{ 'query' : "khard email --parsable --search-in-source-files",
+                \'sync': "/bin/true"}
+                \}
+
+    let g:org_todo_keywords = [['TODO(t)', 'WAITING(w)', '|', 'DONE(d)'],
+                \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
+                \ ['CANCELED(c)']]
+
+    let g:vimwiki_list = [{'path': '~/.vimwiki/',
+                \ 'template_path': '~/.vim/vimwiki/templates',
+                \ 'template_default': 'default',
+                \ 'template_ext': '.html'}]
+    let g:vimwiki_global_ext = 0
+
+
+    " Java completion
+    au FileType java setlocal omnifunc=javacomplete#Complete
+    au FileType java JCEnable
+
+    let g:vimtex_fold_enabled = 1
+    let g:vimtex_fold_levelmarker = '➜'
+
 endfunction

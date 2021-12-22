@@ -29,4 +29,20 @@ Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 
 
 function PluginsNorootConfig()
+    let g:localvimrc_persistent = 1
+
+    let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+    "augroup pencil
+      "au!
+      "au FileType markdown,mkd call pencil#init()
+      "au FileType text         call pencil#init()
+      "au FileType mail         call pencil#init()
+      "au FileType tex          call pencil#init()
+    "augroup END
+
+    let g:vim_markdown_frontmatter=1
+    let g:vim_markdown_math=1
+
+    au FileType markdown call RagtagInit()
 endfunction

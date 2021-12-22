@@ -33,43 +33,36 @@ Plug 'flwyd/vim-conjoin'
 
 
 function PluginsConfig()
-    let g:localvimrc_persistent = 1
 
-    let g:fastfold_minlines = 0
+    " Some preferences for indent detection
+    let g:detectindent_min_indent = 2
+    let g:detectindent_max_indent = 4
+    let g:detectindent_preferred_indent = 4
 
-    au FileType markdown call RagtagInit()
+    let g:airline_powerline_fonts=1
+    let g:airline#extensions#tabline#enabled=1
+    let g:airline#extensions#branch#enabled=1
 
-    let g:detectspelllang_langs = {}
-    let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
-    au FileType mail let g:VimMailSpellLangs=['de', 'en']
+    let g:gruvbox_contrast_light='hard'
+    let g:gruvbox_contrast_dark='hard'
+    set bg=dark
 
-    let g:org_todo_keywords = [['TODO(t)', 'WAITING(w)', '|', 'DONE(d)'],
-                \ ['|', 'OBSOLETE(o)', 'WONT(n)'],
-                \ ['CANCELED(c)']]
+    if &term =~ 'linux'
+        let g:gruvbox_termcolors=16
+    else
+        " Setting termguicolors has two implications:
+        " - Breaks colors for some versions of mosh, but not if tmux is used on top of
+        "   mosh. See https://github.com/mobile-shell/mosh/issues/928
+        set termguicolors
+        let g:gruvbox_italic = 1
+    endif
+    colorscheme gruvbox
 
-    let g:vimwiki_list = [{'path': '~/.vimwiki/',
-                \ 'template_path': '~/.vim/vimwiki/templates',
-                \ 'template_default': 'default',
-                \ 'template_ext': '.html'}]
-    let g:vimwiki_global_ext = 0
-
-    " Java completion
-    au FileType java setlocal omnifunc=javacomplete#Complete
-    au FileType java JCEnable
-
-    let g:VimMailContactsProvider=['khard']
-    let g:VimMailContactsCommands={
-                \'khard':
-                \{ 'query' : "khard email --parsable --search-in-source-files",
-                \'sync': "/bin/true"}
-                \}
-
-    let g:vimtex_fold_enabled = 1
-    let g:vimtex_fold_levelmarker = '➜'
-
-    " termdebug split windows
-    let g:termdebug_wide = 1
-    let termdebugger = $HOME . '/.vim/gdb.sh'
+    " let NERDTreeWinPos="right"
+    let NERDTreeHijackNetrw=0
+    let NERDTreeWinSize=22
+    let NERDTreeQuitOnOpen=1
+    "au VimEnter * if !argc() | Startify | NERDTree | wincmd w
 
     let g:startify_files_number = 5
     let g:startify_session_persistence = 1
