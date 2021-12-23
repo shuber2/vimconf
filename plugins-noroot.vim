@@ -49,4 +49,9 @@ function PluginsNorootConfig()
     " Generally disable gutentags, but enable for some filetypes
     let g:gutentags_enabled = 0
     au FileType c,cpp,objc,tex let g:gutentags_enabled = 1
+    " Make manually created tags files also root markers
+    let g:gutentags_project_root = ['tags']
+    let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
+    " Do not automatically generate on browsing
+    let g:gutentags_generate_on_missing = 0
 endfunction
