@@ -1,7 +1,7 @@
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 
-" Disable conditional loading to have gutentags also for tex files
-Plug 'ludovicchabant/vim-gutentags' ", {'for': ['c', 'cpp', 'objc', 'tex']}
+" Conditional loading does not work, see github issue #823
+Plug 'ludovicchabant/vim-gutentags'
 "Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
 
 Plug 'editorconfig/editorconfig-vim'
@@ -45,4 +45,8 @@ function PluginsNorootConfig()
     let g:vim_markdown_math=1
 
     au FileType markdown call RagtagInit()
+
+    " Generally disable gutentags, but enable for some filetypes
+    let g:gutentags_enabled = 0
+    au FileType c,cpp,objc,tex let g:gutentags_enabled = 1
 endfunction
