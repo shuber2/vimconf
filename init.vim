@@ -73,16 +73,6 @@ au Filetype mail syn match Statement /^\s*-*\s*8<\s*-*\s*$/
 " Line wrap crippled with numbers shown
 au Filetype man setlocal nonumber
 
-" Minimum indenting for source code
-au FileType java,cpp,c,cs let g:detectindent_min_indent = 4
-" Consider using localvimrc config file or editorconfig instead
-"au BufReadPost *.java :DetectIndent
-
-au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
-au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
-
-au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
-au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
 au BufNewFile *.{h,hpp,hxx} call AddIncludeGuards()
 
 au FileType cpp,c packadd termdebug

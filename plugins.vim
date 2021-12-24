@@ -39,6 +39,11 @@ function PluginsConfig()
     let g:detectindent_max_indent = 4
     let g:detectindent_preferred_indent = 4
 
+    " Minimum indenting for source code
+    au FileType c,cpp,objc,java,cs let g:detectindent_min_indent = 4
+    " Consider using localvimrc config file or editorconfig instead
+    "au BufReadPost *.java :DetectIndent
+
     let g:airline_powerline_fonts=1
     let g:airline#extensions#tabline#enabled=1
     let g:airline#extensions#branch#enabled=1
@@ -90,5 +95,10 @@ function PluginsConfig()
                     \ '',
                     \ ]
     endif
+
+    au BufEnter *.c* let b:fswitchlocs='reg:/lib/include/,rel:.'
+    au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
+    au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
+    au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
 endfunction
 
