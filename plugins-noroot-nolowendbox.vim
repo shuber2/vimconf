@@ -48,13 +48,12 @@ Plug 'sjl/splice.vim', {'on': 'SpliceInit'}
 " Costs a second startup time
 Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 
+Plug 'sheerun/vim-polyglot'
+
 if has('nvim-0.5')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-refactor', {'do': ':TSUpdate'}
-else
-    Plug 'sheerun/vim-polyglot'
 endif
-
 
 function PluginsNorootNolowendboxConfig()
     let g:neomake_c_enabled_makers = ['clangtidy', 'clangcheck']
