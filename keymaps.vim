@@ -55,10 +55,10 @@ function FSvsplit()
     execute ':FSHere'
 endfunction
 
-au Filetype c,cpp,objc map <buffer> <F11> :call FSvsplit()<CR>
-" Terminal-based vi report S-F11 as F23
-au Filetype c,cpp,objc map <buffer> <S-F11> :FSHere<CR>
-au Filetype c,cpp,objc map <buffer> <F23> :FSHere<CR>
+au Filetype c,cpp,objc map <buffer> <F12> :call FSvsplit()<CR>
+" Terminal-based vi report S-F12 as F24
+au Filetype c,cpp,objc map <buffer> <S-F12> :FSHere<CR>
+au Filetype c,cpp,objc map <buffer> <F24> :FSHere<CR>
 
 au Filetype markdown map <buffer> <F5> :call RunMarkdown()<CR>
 au Filetype asciidoc map <buffer> <F5> :call RunAsciidoc()<CR>
