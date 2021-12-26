@@ -13,6 +13,7 @@ endif
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 
 Plug 'neomake/neomake'
+Plug 'puremourning/vimspector'
 
 " Prevent slow foling update, e.g., for vimtex
 Plug 'Konfekt/FastFold'
@@ -239,5 +240,36 @@ EOF
 
     let g:vimtex_fold_enabled = 1
     let g:vimtex_fold_levelmarker = '➜'
+
+    au FileType c,cpp,obj,java,python packadd! vimspector
+    let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools' ]
+    "let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
+    function VimspectorRestartOrCreateConfig()
+        if !filereadable('.vimspector.json')
+            execute 'tabe .vimspector.json'
+        else
+            call vimspector#Restart()
+        endif
+    endfunction
+
+    nmap <leader>dc  <Plug>VimspectorContinue
+    nmap <leader>ds  <Plug>VimspectorStop
+    nmap <leader>dr  :call VimspectorRestartOrCreateConfig()<CR>
+    nmap <leader>drr :call vimspector#Reset()<CR>
+    nmap <leader>dp  <Plug>VimspectorPause
+    nmap <leader>db  <Plug>VimspectorToggleBreakpoint
+    nmap <leader>dcb <Plug>VimspectorToggleConditionalBreakpoint
+    nmap <leader>dfb <Plug>VimspectorAddFunctionBreakpoint
+    nmap <leader>dtc <Plug>VimspectorRunToCursor
+    nmap <leader>do  <Plug>VimspectorStepOver
+    nmap <leader>di  <Plug>VimspectorStepInto
+    nmap <leader>dof <Plug>VimspectorStepOut
+    " for normal mode, the word under the cursor
+    nmap <Leader>de  <Plug>VimspectorBalloonEval
+    " for visual mode, the visually selected text
+    xmap <Leader>de  <Plug>VimspectorBalloonEval
+
+    au BufNewFile .vimspector.json read ~/.vim/neosnippets/vimspector.json
 
 endfunction

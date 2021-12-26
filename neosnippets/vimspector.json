@@ -1,0 +1,48 @@
+{
+    "configurations": {
+        "Launch": {
+            "default": true,
+            "adapter": "vscode-cpptools",
+            "filetypes": [ "cpp", "c", "objc", "rust" ],
+            "configuration": {
+                "request": "launch",
+                "MIMode": "gdb",
+                "program": "${fileBasenameNoExtension}",
+                "args": [ ],
+                "environment": [ ],
+                "externalConsole": true
+            }
+        },
+        "Attach": {
+            "adapter": "vscode-cpptools",
+            "filetypes": [ "cpp", "c", "objc", "rust" ],
+            "configuration": {
+                "request": "attach",
+                "MIMode": "gdb",
+                "program": "${fileBasenameNoExtension}"
+            }
+        },
+        "Python: Attach To Vim": {
+            "adapter": "multi-session",
+            "filetypes": [ "python" ],
+            "variables": {
+                "port": "5678",
+                "host": "localhost"
+            },
+            "configuration": {
+                "request": "attach"
+            }
+        },
+        "Python: Run current script": {
+            "default": true,
+            "adapter": "debugpy",
+            "filetypes": [ "python" ],
+            "configuration": {
+                "request": "launch",
+                "program": "${file}",
+                "args": [ "*${args:--update-gadget-config}" ],
+                "justMyCode#json": "${justMyCode:true}"
+            }
+        }
+    }
+}
