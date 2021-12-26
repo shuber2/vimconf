@@ -246,6 +246,7 @@ EOF
 
     function VimspectorRestartOrCreateConfig()
         if !filereadable('.vimspector.json')
+            echo "Missing .vimspector.json, created one."
             execute 'tabe .vimspector.json'
         else
             call vimspector#Restart()
