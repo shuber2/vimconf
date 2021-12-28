@@ -8,3 +8,5 @@ plug-snapshot-*
 plugged
 plugins-local.vim
 spell/
+tags
+vimspector-config/gadgets
