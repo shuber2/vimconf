@@ -10,7 +10,14 @@
                 "program": "${fileBasenameNoExtension}",
                 "args": [ ],
                 "environment": [ ],
-                "externalConsole": true
+                "externalConsole": true,
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
             }
         },
         "Attach": {
@@ -19,7 +26,14 @@
             "configuration": {
                 "request": "attach",
                 "MIMode": "gdb",
-                "program": "${fileBasenameNoExtension}"
+                "program": "${fileBasenameNoExtension}",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
             }
         },
         "Python: Attach To Vim": {
