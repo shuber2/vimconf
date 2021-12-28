@@ -241,6 +241,7 @@ EOF
     let g:vimtex_fold_levelmarker = '➜'
 
     au FileType c,cpp,obj,java,python packadd! vimspector
+    let g:vimspector_base_dir = expand('~/.vim/vimspector-config')
     let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools' ]
     "let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
@@ -256,6 +257,7 @@ EOF
     nmap <leader>dc  <Plug>VimspectorContinue
     nmap <leader>ds  <Plug>VimspectorStop
     nmap <leader>dr  :call VimspectorRestartOrCreateConfig()<CR>
+    "nmap <leader>dr  :call vimspector#Restart()<CR>
     nmap <leader>drr :call vimspector#Reset()<CR>
     nmap <leader>dp  <Plug>VimspectorPause
     nmap <leader>db  <Plug>VimspectorToggleBreakpoint
@@ -270,6 +272,6 @@ EOF
     " for visual mode, the visually selected text
     xmap <Leader>de  <Plug>VimspectorBalloonEval
 
-    au BufNewFile .vimspector.json read ~/.vim/neosnippets/vimspector.json
+    au BufNewFile .vimspector.json read ~/.vim/vimspector-config/vimspector.json
 
 endfunction
