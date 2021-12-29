@@ -8,6 +8,7 @@ Plug 'dstein64/vim-startuptime'
 
 Plug 'vim-airline/vim-airline'
 Plug 'gruvbox-community/gruvbox'
+Plug 'liuchengxu/vim-which-key'
 
 Plug 'benknoble/vim-auto-origami'
 
@@ -28,7 +29,6 @@ Plug 'lambdalisue/vim-manpager', {'on': 'MANPAGER'}
 
 " Make . more useful after a plugin map
 Plug 'tpope/vim-repeat'
-
 Plug 'flwyd/vim-conjoin'
 
 
@@ -100,5 +100,27 @@ function PluginsConfig()
     au BufEnter *.h* let b:fswitchlocs='reg:/include/lib/,rel:.'
     au BufEnter *.cpp,*.cc,*.cxx let b:fswitchdst='h,hxx,hpp,hh'
     au BufEnter *.h,*.hh,*.hxx let b:fswitchdst='cc,c,cxx,cpp'
+
+    let g:mapleader = "\<Space>"
+    let g:maplocalleader = ','
+    nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+    nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
+    vnoremap <silent> <leader>      :<c-u>WhichKeyVisual '<Space>'<CR>
+    vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
+
+    let g:which_key_map =  {}
+    au VimEnter * call which_key#register('<Space>', 'g:which_key_map')
+    let g:which_key_map.b = {
+      \ 'name': '+buffer',
+      \ '1':    ['b1',        'buffer 1'],
+      \ '2':    ['b2',        'buffer 2'],
+      \ 'd':    ['bd',        'delete-buffer'],
+      \ 'f':    ['bfirst',    'first-buffer'],
+      \ 'h':    ['Startify',  'home-buffer'],
+      \ 'l':    ['blast',     'last-buffer'],
+      \ 'n':    ['bnext',     'next-buffer'],
+      \ 'p':    ['bprevious', 'previous-buffer'],
+      \ }
+
 endfunction
 

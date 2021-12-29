@@ -36,6 +36,7 @@ set colorcolumn=+1
 set mouse=a
 set wildmenu
 set wildmode=longest,list:full
+set showcmd
 
 set tabpagemax=100
 
