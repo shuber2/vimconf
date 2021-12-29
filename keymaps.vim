@@ -6,8 +6,9 @@ if has('clipboard')
     " override plugin keymaps.
     autocmd VimEnter * vnoremap <C-c> "+y
     autocmd VimEnter * vnoremap <C-x> "+x
+    " Is performed by S+Ins
     "autocmd VimEnter * nnoremap <C-v> "+p
-    autocmd VimEnter * inoremap <C-v> <c-r>+
+    "autocmd VimEnter * inoremap <C-v> <c-r>+
 endif
 
 " ctrl+d as EOF exits shells and the like. Add a keymap for the same here.
