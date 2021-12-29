@@ -54,4 +54,7 @@ function PluginsNorootConfig()
     let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
     " Do not automatically generate on browsing
     let g:gutentags_generate_on_missing = 0
+
+    " Allow for reflow of bullet paragraphs
+    let g:vim_markdown_auto_insert_bullets = 0
 endfunction
