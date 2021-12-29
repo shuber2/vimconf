@@ -42,6 +42,7 @@ endif
 
 Plug 'ryanoasis/vim-devicons', Cond(g:enable_plugin_devicons)
 Plug 'joom/latex-unicoder.vim', {'on': '<Plug>Unicoder'}
+Plug 'chrisbra/unicode.vim'
 
 Plug 'sjl/splice.vim', {'on': 'SpliceInit'}
 
