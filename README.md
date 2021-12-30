@@ -1,12 +1,5 @@
 # A modular vim configuration
 
-This is my personal vim configuration that is partly inspired by
-[SpaceVim](https://spacevim.org/). It is compatible to vim, gvim (8.0+) and
-neovim (0.2+). The configuration is split up into multiple files such that
-personal customization is separated from boilerplate code.
-
-![A demo screenshot](https://www.sthu.org/code/codesnippets/img/vimconf-start-plugin.png)
-
 
 <div class="hideonwebsite">
 This repository is a replication of the repository <a
@@ -14,6 +7,40 @@ href="https://git.sthu.org/?p=vimconf.git;a=summary">here</a>. The <a
 href="https://www.sthu.org/code/codesnippets/vimconf.html">website</a> gives
 further details and more screenshots.
 </div>
+
+
+This is my personal vim configuration. The [git
+repo](https://git.sthu.org/?p=vimconf.git;a=summary) of this configuration is
+under constant flux, however, it should be compatible with (g)vim (8.0+) and
+neovim (0.2+), yet some features are only available with newer versions.
+
+![A demo screenshot](https://www.sthu.org/code/codesnippets/img/vimconf-startify.png)
+
+
+## Flavors on different machines
+
+I would like to use this configuration on a large variety of machines with
+different needs. To accommodate for this, the configuration is split up into
+multiple files and a different set of plugins is used:
+
+- In any case, the plugin set in `plugins.vim` is loaded.
+- If run as non-root user, an additional plugin set in `plugins-noroot.vim` is
+  loaded.
+- If run on a no-low-end-box, an additional plugin set in
+  `plugins-noroot-nolowendbox.vim` is loaded. A low-end box is indicated by the
+  existence of the file `lowendbox`, e.g., on my Raspberry Pi installations.
+- Also, if `plugins-local.vim` exists, this plugin set is loaded, too. For
+  instance, on one machine I have gnupg and corresponding vim plugins
+  configured.
+
+Similar to `plugins-local.vim`, also the following files are sourced if
+existent:
+
+  - `macros-local.vim`
+  - `keymaps-local.vim`
+  - `init-local.vim`
+
+Example files are shipped with the repository.
 
 ## Installation
 
@@ -55,20 +82,6 @@ git clone https://git.sthu.org/repos/vimconf.git ~/.vim
 
 This install script creates backups of existing configuration files (e.g.,
 `~/.vimrc`) and then creates symlinks to configuration files in `~/.vim`.
-
-
-## Specialization for local machines
-
-I personally would like to have the same vim configuration on all my user
-accounts. Still, on certain machines I would like to personalize and specialize
-the configuration. The following files are sourced if existent:
-
-  - plugins-local.vim
-  - macros-local.vim
-  - keymaps-local.vim
-  - init-local.vim
-
-Example files are shipped with the repository.
 
 
 ## Terminal color settings
