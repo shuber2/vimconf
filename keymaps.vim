@@ -2,10 +2,17 @@
 " Global settings
 
 if has('clipboard')
+    " Use + or * registers
+    if has('unnamedplus')
+        set clipboard+=unnamedplus
+    else
+        set clipboard+=unnamed
+    endif
+
     " Ordinary ctrl+{c,x,v} using system clipboard register +. We use autocmd to
     " override plugin keymaps.
-    autocmd VimEnter * vnoremap <C-c> "+y
-    autocmd VimEnter * vnoremap <C-x> "+x
+    "autocmd VimEnter * vnoremap <C-c> "+y
+    "autocmd VimEnter * vnoremap <C-x> "+x
     " Is performed by S+Ins
     "autocmd VimEnter * nnoremap <C-v> "+p
     "autocmd VimEnter * inoremap <C-v> <c-r>+
