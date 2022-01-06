@@ -282,4 +282,12 @@ EOF
     " Do not show diagnostic window of vim-clang
     let g:clang_diagsopt = ''
 
+    augroup ClangFormatSettings
+        au!
+        au FileType c,cpp,objc,javascript,java,typescript,protobuf,cuda,vala
+                    \ vmap <buffer><leader>cf <Plug>(operator-clang-format)
+        au FileType c,cpp,objc,javascript,java,typescript,protobuf,cuda,vala
+                    \ nmap <buffer><leader>cf :ClangFormat<CR>
+    augroup END
+
 endfunction
