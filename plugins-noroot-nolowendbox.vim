@@ -15,6 +15,8 @@ Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'neomake/neomake'
 Plug 'puremourning/vimspector'
 
+Plug 'kana/vim-operator-user'
+Plug 'rhysd/vim-clang-format'
 Plug 'justmao945/vim-clang', {'for': ['c', 'cpp', 'objc']}
 
 " Prevent slow foling update, e.g., for vimtex
