@@ -1,16 +1,10 @@
 Plug 'jamessan/vim-gnupg'
 
-" An alternative to youcompleteme (ycm)
-Plug 'justmao945/vim-clang', {'for': ['c', 'cpp', 'objc']}
-
 "Plug 'kien/tabman.vim'
 
 "Plug 'chikamichi/mediawiki.vim'
 
 function PluginsLocalConfig()
-    " Do not show diagnostic window of vim-clang
-    let g:clang_diagsopt = ''
-
     let g:ConqueTerm_StartMessages = 0
 
     " Reduce load on memory by updating one plugin at a time

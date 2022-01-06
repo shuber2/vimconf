@@ -15,6 +15,8 @@ Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'neomake/neomake'
 Plug 'puremourning/vimspector'
 
+Plug 'justmao945/vim-clang', {'for': ['c', 'cpp', 'objc']}
+
 " Prevent slow foling update, e.g., for vimtex
 Plug 'Konfekt/FastFold'
 Plug 'lervag/vimtex', {'for': 'tex'}
@@ -274,5 +276,8 @@ EOF
     xmap <Leader>de  <Plug>VimspectorBalloonEval
 
     au BufNewFile .vimspector.json read ~/.vim/vimspector-config/vimspector.json
+
+    " Do not show diagnostic window of vim-clang
+    let g:clang_diagsopt = ''
 
 endfunction
