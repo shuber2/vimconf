@@ -245,7 +245,7 @@ EOF
     let g:vimtex_fold_enabled = 1
     let g:vimtex_fold_levelmarker = '➜'
 
-    au FileType c,cpp,obj,java,python packadd! vimspector
+    au FileType c,cpp,objc,java,python packadd! vimspector
     let g:vimspector_base_dir = expand('~/.vim/vimspector-config')
     let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools' ]
     "let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
