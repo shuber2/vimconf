@@ -112,6 +112,15 @@ endfunction
 
 function RunAsciidoctor()
   execute ":!asciidoctor " . @%
+  if executable("asciidoctor-pdf")
+    execute ":!asciidoctor-pdf " . @%
+  elseif executable("asciidoctor")
+    execute ":!asciidoctor " . @%
+  endif
+endfunction
+
+function RunAsciidoctorPdf()
+  execute ":!asciidoctor-pdf " . @%
 endfunction
 
 
@@ -129,7 +138,9 @@ endfunction
 
 
 function RunAsciidoc()
-  if executable("asciidoctor")
+  if executable("asciidoctor-pdf")
+    call RunAsciidoctorPdf()
+  elseif executable("asciidoctor")
     call RunAsciidoctor()
   else
     echo "No asciidoc implementation found."

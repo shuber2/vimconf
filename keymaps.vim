@@ -69,7 +69,7 @@ au Filetype c,cpp,objc map <buffer> <S-F12> :FSHere<CR>
 au Filetype c,cpp,objc map <buffer> <F24> :FSHere<CR>
 
 au Filetype markdown map <buffer> <F5> :call RunMarkdown()<CR>
-au Filetype asciidoc map <buffer> <F5> :call RunAsciidoc()<CR>
+au Filetype asciidoc,asciidoctor map <buffer> <F5> :call RunAsciidoc()<CR>
 
 " See https://github.com/artur-shaik/vim-Javacomplete2
 " <C-j>ji <leader>ji
