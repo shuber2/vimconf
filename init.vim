@@ -113,3 +113,7 @@ au BufRead,BufNewFile * call SetBadWhitespaceSyntax()
 let g:termdebug_wide = 1
 let termdebugger = $HOME . '/.vim/gdb.sh'
 
+
+if filereadable($HOME . '/.vim/init-local.vim')
+  source ~/.vim/init-local.vim
+endif
