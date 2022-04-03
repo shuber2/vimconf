@@ -35,6 +35,7 @@ Plug 'hail2u/vim-css3-syntax', {'for': ['scss', 'css']}
 
 Plug 'https://gitlab.com/dbeniamine/vim-mail'
 Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
+Plug 'dpelle/vim-LanguageTool'
 
 " Disable devicons on linux terminal
 if $TERM == 'linux'
@@ -218,6 +219,8 @@ EOF
 
     let g:detectspelllang_langs = {}
     let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
+
+    let g:languagetool_cmd='languagetool'
 
     au FileType mail let g:VimMailSpellLangs=['de', 'en']
     let g:VimMailContactsProvider=['khard']
