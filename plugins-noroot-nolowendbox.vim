@@ -220,7 +220,13 @@ EOF
     let g:detectspelllang_langs = {}
     let g:detectspelllang_langs.aspell =[ 'en_US', 'de_AT']
 
-    let g:languagetool_cmd='languagetool'
+    " Try finding jar file. If it does not work, set cmd directly
+    let g:languagetool_jar='/snap/languagetool/current/usr/bin/languagetool-commandline.jar'
+    if !filereadable(g:languagetool_jar)
+        unlet! g:languagetool_jar
+        let g:languagetool_cmd='languagetool'
+    endif
+
 
     au FileType mail let g:VimMailSpellLangs=['de', 'en']
     let g:VimMailContactsProvider=['khard']
