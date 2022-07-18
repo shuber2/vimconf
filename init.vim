@@ -16,6 +16,9 @@ set fillchars=vert:│,fold:\
 set listchars=tab:»­,trail:·,eol:$
 set virtualedit=block
 
+" use filetype.lua and do not use filetype.vim for >=neovim-0.7.2
+let g:do_filetype_lua = 1
+let g:did_load_filetypes = 0
 filetype plugin indent on
 
 set tabstop=4
