@@ -43,6 +43,10 @@ set showcmd
 
 set tabpagemax=100
 
+if has('nvim-0.7')
+  set laststatus=3
+endif
+
 syntax on
 
 if filereadable($HOME . '/.vim/lowendbox')
