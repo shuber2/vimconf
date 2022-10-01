@@ -25,7 +25,11 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'thinca/vim-fontzoom'
 
-Plug 'lambdalisue/vim-manpager', {'on': 'MANPAGER'}
+" vim-core on Gentoo does ship a manpager plugin that collides with MANPAGER
+" definition.
+if has('nvim') || stridx(system("uname -r"), "-gentoo") == -1
+    Plug 'lambdalisue/vim-manpager', {'on': 'MANPAGER'}
+endif
 
 " Make . more useful after a plugin map
 Plug 'tpope/vim-repeat'
