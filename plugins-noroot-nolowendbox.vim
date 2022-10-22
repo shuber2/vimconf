@@ -57,7 +57,7 @@ Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 Plug 'sheerun/vim-polyglot'
 
 if has('nvim-0.5')
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'tag': 'v0.8.0'}
     Plug 'nvim-treesitter/nvim-treesitter-refactor', {'do': ':TSUpdate'}
 endif
 
@@ -175,8 +175,8 @@ function PluginsNorootNolowendboxConfig()
 
 lua <<EOF
         require'nvim-treesitter.configs'.setup {
-            -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-            ensure_installed = "maintained",
+            -- one of "all"
+            ensure_installed = "all",
             -- List of parsers to ignore installing
             ignore_install = {},
             -- Modules and its options go here
