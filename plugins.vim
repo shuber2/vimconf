@@ -31,6 +31,8 @@ Plug 'lambdalisue/vim-manpager'
 Plug 'tpope/vim-repeat'
 Plug 'flwyd/vim-conjoin'
 
+Plug 'nfnty/vim-nftables'
+
 
 function PluginsConfig()
 
