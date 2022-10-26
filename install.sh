@@ -83,7 +83,7 @@ start the plugin provided colorscheme is not available yet.
 
 Add this line to your shell configuration, e.g., ~/.profile, to
 use vim as man pager:
-  export MANPAGER=\"view -c MANPAGER -\"
+  export MANPAGER=\"vi -c ASMANPAGER -\"
 EOF
 }
 
