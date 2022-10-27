@@ -29,7 +29,6 @@ Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 
 Plug 'ggandor/leap.nvim'
 
-
 function PluginsNorootConfig()
     let g:localvimrc_persistent = 1
 
@@ -64,7 +63,9 @@ function PluginsNorootConfig()
     " Allow for reflow of bullet paragraphs
     let g:vim_markdown_auto_insert_bullets = 0
 
+    if has('nvim-0.5')
 lua <<EOF
     require('leap').set_default_keymaps()
 EOF
+    endif
 endfunction
