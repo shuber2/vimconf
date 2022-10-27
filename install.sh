@@ -51,6 +51,7 @@ check_requirements()
     check_prog curl
     check_prog git
     check_vim +python3
+    check_vim +lua
     check_py3 neovim
     check_font "Hack NF"
 }
