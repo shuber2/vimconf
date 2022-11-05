@@ -253,6 +253,7 @@ EOF
 
     let g:vimtex_fold_enabled = 1
     let g:vimtex_fold_levelmarker = '➜'
+    let g:airline#extensions#vimtex#enabled = 1
 
     au FileType c,cpp,objc,java,python packadd! vimspector
     let g:vimspector_base_dir = expand('~/.vim/vimspector-config')
