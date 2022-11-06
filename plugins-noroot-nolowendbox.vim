@@ -21,7 +21,7 @@ Plug 'justmao945/vim-clang', {'for': ['c', 'cpp', 'objc']}
 
 " Prevent slow foling update, e.g., for vimtex
 Plug 'Konfekt/FastFold'
-Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'lervag/vimtex'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
