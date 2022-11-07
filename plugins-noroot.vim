@@ -63,6 +63,8 @@ function PluginsNorootConfig()
     " Allow for reflow of bullet paragraphs
     let g:vim_markdown_auto_insert_bullets = 0
 
+    let g:calendar_monday = 1
+
     if has('nvim-0.5')
 lua <<EOF
     require('leap').set_default_keymaps()
