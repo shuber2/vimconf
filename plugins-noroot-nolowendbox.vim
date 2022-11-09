@@ -56,12 +56,15 @@ Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 
 Plug 'sheerun/vim-polyglot'
 
-if has('nvim')
+" neovim-0.4 has troubles with nvim-treesitter
+if has('nvim-0.5')
+    " neovim-0.7 works untilk v0.8.0
     if has('nvim-0.8')
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     else
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'tag': 'v0.8.0'}
     endif
+
     Plug 'nvim-treesitter/nvim-treesitter-refactor', {'do': ':TSUpdate'}
 endif
 
