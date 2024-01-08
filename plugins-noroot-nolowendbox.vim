@@ -23,7 +23,7 @@ Plug 'justmao945/vim-clang', {'for': ['c', 'cpp', 'objc']}
 Plug 'Konfekt/FastFold'
 Plug 'lervag/vimtex'
 
-Plug 'shuber2/easychair2-syntax'
+Plug 'shuber2/vim-syntax-easychair2'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
