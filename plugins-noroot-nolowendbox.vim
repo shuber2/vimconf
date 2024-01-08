@@ -58,7 +58,7 @@ Plug 'sheerun/vim-polyglot'
 
 " neovim-0.4 has troubles with nvim-treesitter
 if has('nvim-0.5')
-    " neovim-0.7 works untilk v0.8.0
+    " neovim-0.7 works until v0.8.0
     if has('nvim-0.9')
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     else
