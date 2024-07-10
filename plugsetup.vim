@@ -9,34 +9,39 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-source ~/.vim/plugins.vim
+source ~/.vim/plugins-mini.vim
 
 " Load various conditinoal plugin sets
-if filereadable($HOME . '/.vim/plugins-local.vim')
-    source ~/.vim/plugins-local.vim
+
+if filereadable($HOME . '/.vim/plugins-midi.vim')
+    source ~/.vim/plugins-midi.vim
 endif
 
-if $USER != "root"
-    source ~/.vim/plugins-noroot.vim
+if filereadable($HOME . '/.vim/plugins-full.vim')
+    source ~/.vim/plugins-full.vim
+endif
 
-    if g:lowendbox == 0
-        source ~/.vim/plugins-noroot-nolowendbox.vim
-    endif
+if filereadable($HOME . '/.vim/plugins-local.vim')
+    source ~/.vim/plugins-local.vim
 endif
 
 call plug#end()
 
 
-" Call the config functions of the plugins
-call PluginsConfig()
-if filereadable($HOME . '/.vim/plugins-local.vim')
-    call PluginsLocalConfig()
+" Call config functions of plugin sets
+
+call PluginsConfigMini()
+
+if filereadable($HOME . '/.vim/plugins-midi.vim')
+    call PluginsConfigMidi()
 endif
-if $USER != "root"
-    call PluginsNorootConfig()
-    if g:lowendbox == 0
-        call PluginsNorootNolowendboxConfig()
-    endif
+
+if filereadable($HOME . '/.vim/plugins-full.vim')
+    call PluginsConfigFull()
+endif
+
+if filereadable($HOME . '/.vim/plugins-local.vim')
+    call PluginsConfigLocal()
 endif
 
 

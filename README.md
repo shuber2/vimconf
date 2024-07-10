@@ -23,15 +23,12 @@ I would like to use this configuration on a large variety of machines with
 different needs. To accommodate for this, the configuration is split up into
 multiple files and a different set of plugins is used:
 
-- In any case, the plugin set in `plugins.vim` is loaded.
-- If run as non-root user, an additional plugin set in `plugins-noroot.vim` is
-  loaded.
-- If run on a no-low-end-box, an additional plugin set in
-  `plugins-noroot-nolowendbox.vim` is loaded. A low-end box is indicated by the
-  existence of the file `lowendbox`, e.g., on my Raspberry Pi installations.
-- Also, if `plugins-local.vim` exists, this plugin set is loaded, too. For
-  instance, on one machine I have gnupg and corresponding vim plugins
-  configured.
+- In any case, the plugin set in `plugins-mini.vim` is loaded.
+- Furthermore, `plugins-midi.vim`, `plugins-full.vim` and `plugins-local.vim`
+  are loaded if present. They are provided as `plugins-xxx.vim.example` and you
+  can create a symlink `plugins-xxx.vim` to have them loaded. (In case of
+  `plugins-local.vim` you will probably provide a machine-dedicated version
+  rather than symlinking the example file.)
 
 Similar to `plugins-local.vim`, also the following files are sourced if
 existent:

@@ -1,5 +1,7 @@
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 
+Plug 'jamessan/vim-gnupg'
+
 " Conditional loading does not work, see github issue #823
 Plug 'ludovicchabant/vim-gutentags'
 "Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
@@ -29,7 +31,7 @@ Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 
 Plug 'ggandor/leap.nvim'
 
-function PluginsNorootConfig()
+function PluginsConfigMidi()
     let g:localvimrc_persistent = 1
 
     let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']

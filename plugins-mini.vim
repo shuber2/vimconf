@@ -34,7 +34,7 @@ Plug 'flwyd/vim-conjoin'
 Plug 'nfnty/vim-nftables'
 
 
-function PluginsConfig()
+function PluginsConfigMini()
 
     " Some preferences for indent detection
     let g:detectindent_min_indent = 2

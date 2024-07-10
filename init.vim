@@ -49,12 +49,6 @@ endif
 
 syntax on
 
-if filereadable($HOME . '/.vim/lowendbox')
-    let g:lowendbox = 1
-else
-    let g:lowendbox = 0
-endif
-
 runtime macros.vim
 runtime keymaps.vim
 runtime plugsetup.vim

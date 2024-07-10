@@ -48,6 +48,7 @@ else
 endif
 
 Plug 'ryanoasis/vim-devicons', Cond(g:enable_plugin_devicons)
+
 Plug 'joom/latex-unicoder.vim'
 Plug 'chrisbra/unicode.vim'
 
@@ -70,7 +71,7 @@ if has('nvim-0.5')
     Plug 'nvim-treesitter/nvim-treesitter-refactor', {'do': ':TSUpdate'}
 endif
 
-function PluginsNorootNolowendboxConfig()
+function PluginsConfigFull()
     let g:neomake_c_enabled_makers = ['clangtidy', 'clangcheck']
     let g:neomake_cpp_enabled_makers = ['clangtidy', 'clangcheck']
     let g:clang_compilation_database = '.'

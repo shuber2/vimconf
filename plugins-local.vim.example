@@ -1,5 +1,3 @@
-Plug 'jamessan/vim-gnupg'
-
 "Plug 'kien/tabman.vim'
 
 "Plug 'chikamichi/mediawiki.vim'
