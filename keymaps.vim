@@ -21,28 +21,18 @@ endif
 " ctrl+d as EOF exits shells and the like. Add a keymap for the same here.
 nnoremap <C-d> :q<cr>
 
-nnoremap <C-p> :Denite file/rec<cr>
-nnoremap <space>/ :Denite grep:.<cr>
-nnoremap <space>s :Denite buffer<cr>
-
 nnoremap <C-space> pumvisible() ? "\<c-n>" : "\<tab>"
 
-nnoremap <F2> :NERDTreeToggle<cr>
+nnoremap <F2> :lua MiniFiles.open()<cr>
 nnoremap <F3> :TagbarToggle<cr>
+nnoremap <F4> :lua MiniMap.toggle()<cr>
 
 nmap <s-PageDown> :bn<CR>
 nmap <s-PageUp>   :bp<CR>
 
-map <a-c> <plug>NERDCommenterToggle
-
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-vmap <Enter> <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

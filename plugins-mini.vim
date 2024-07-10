@@ -8,20 +8,13 @@ Plug 'dstein64/vim-startuptime'
 
 Plug 'vim-airline/vim-airline'
 Plug 'gruvbox-community/gruvbox'
-Plug 'liuchengxu/vim-which-key'
 
 Plug 'benknoble/vim-auto-origami'
-
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
 Plug 'roryokane/detectindent'
 
 " This plugin cannot be conditionally loaded, see github issue #18
 Plug 'derekwyatt/vim-fswitch' ", {'for': ['c', 'cpp', 'objc']}
-
-Plug 'godlygeek/tabular'
-Plug 'junegunn/vim-easy-align'
 
 Plug 'thinca/vim-fontzoom'
 
@@ -33,6 +26,10 @@ Plug 'flwyd/vim-conjoin'
 
 Plug 'nfnty/vim-nftables'
 
+if has('nvim')
+
+    Plug 'echasnovski/mini.nvim'", { 'branch': 'stable' }
+endif
 
 function PluginsConfigMini()
 
@@ -64,12 +61,6 @@ function PluginsConfigMini()
         let g:gruvbox_italic = 1
     endif
     colorscheme gruvbox
-
-    " let NERDTreeWinPos="right"
-    let NERDTreeHijackNetrw=0
-    let NERDTreeWinSize=22
-    let NERDTreeQuitOnOpen=1
-    "au VimEnter * if !argc() | Startify | NERDTree | wincmd w
 
     let g:startify_files_number = 5
     let g:startify_session_persistence = 1
@@ -105,24 +96,84 @@ function PluginsConfigMini()
 
     let g:mapleader = "\<Space>"
     let g:maplocalleader = ','
-    nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-    nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
-    vnoremap <silent> <leader>      :<c-u>WhichKeyVisual '<Space>'<CR>
-    vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
 
-    let g:which_key_map =  {}
-    au VimEnter * call which_key#register('<Space>', 'g:which_key_map')
-    let g:which_key_map.b = {
-      \ 'name': '+buffer',
-      \ '1':    ['b1',        'buffer 1'],
-      \ '2':    ['b2',        'buffer 2'],
-      \ 'd':    ['bd',        'delete-buffer'],
-      \ 'f':    ['bfirst',    'first-buffer'],
-      \ 'h':    ['Startify',  'home-buffer'],
-      \ 'l':    ['blast',     'last-buffer'],
-      \ 'n':    ['bnext',     'next-buffer'],
-      \ 'p':    ['bprevious', 'previous-buffer'],
-      \ }
+    if has('nvim-0.7')
+        lua <<EOF
+
+        require('mini.align').setup()
+        require('mini.ai').setup()
+        require('mini.bracketed').setup()
+        require('mini.bufremove').setup()
+        require('mini.comment').setup()
+        require('mini.completion').setup({delay = {completion = 500}})
+        require('mini.cursorword').setup()
+        require('mini.diff').setup()
+        require('mini.files').setup()
+        require('mini.fuzzy').setup()
+        require('mini.icons').setup()
+        require('mini.git').setup()
+        require('mini.jump2d').setup()
+        require('mini.map').setup()
+        require('mini.move').setup()
+        require('mini.notify').setup()
+        require('mini.operators').setup()
+        require('mini.pick').setup()
+        require('mini.sessions').setup()
+        require('mini.splitjoin').setup()
+        require('mini.surround').setup()
+        require('mini.trailspace').setup()
+EOF
+    endif
+
+    if has('nvim-0.9')
+        lua <<EOF
+
+        local miniclue = require('mini.clue')
+        miniclue.setup({
+        triggers = {
+            -- Leader triggers
+            { mode = 'n', keys = '<Leader>' },
+            { mode = 'x', keys = '<Leader>' },
+
+            -- Built-in completion
+            { mode = 'i', keys = '<C-x>' },
+
+            -- `g` key
+            { mode = 'n', keys = 'g' },
+            { mode = 'x', keys = 'g' },
+
+            -- Marks
+            { mode = 'n', keys = "'" },
+            { mode = 'n', keys = '`' },
+            { mode = 'x', keys = "'" },
+            { mode = 'x', keys = '`' },
+
+            -- Registers
+            { mode = 'n', keys = '"' },
+            { mode = 'x', keys = '"' },
+            { mode = 'i', keys = '<C-r>' },
+            { mode = 'c', keys = '<C-r>' },
+
+            -- Window commands
+            { mode = 'n', keys = '<C-w>' },
+
+            -- `z` key
+            { mode = 'n', keys = 'z' },
+            { mode = 'x', keys = 'z' },
+            },
+
+        clues = {
+            -- Enhance this by adding descriptions for <Leader> mapping groups
+            miniclue.gen_clues.builtin_completion(),
+            miniclue.gen_clues.g(),
+            miniclue.gen_clues.marks(),
+            miniclue.gen_clues.registers(),
+            miniclue.gen_clues.windows(),
+            miniclue.gen_clues.z(),
+            },
+        })
+EOF
+    endif
 
 endfunction
 

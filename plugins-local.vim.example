@@ -2,7 +2,7 @@
 
 "Plug 'chikamichi/mediawiki.vim'
 
-function PluginsLocalConfig()
+function PluginsConfigLocal()
     " Reduce load on memory by updating one plugin at a time
     "let g:plug_threads = 1
 

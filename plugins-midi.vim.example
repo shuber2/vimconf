@@ -4,13 +4,11 @@ Plug 'jamessan/vim-gnupg'
 
 " Conditional loading does not work, see github issue #823
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'vim-scripts/Conque-GDB', {'for': ['c', 'cpp', 'objc']}
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'embear/vim-localvimrc'
 
 Plug 'airblade/vim-rooter'
-Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'lvht/tagbar-markdown', {'for': 'markdown'}
@@ -29,7 +27,6 @@ Plug 'mattn/calendar-vim'
 
 Plug 'vim-scripts/loremipsum', {'on': 'Loremipsum'}
 
-Plug 'ggandor/leap.nvim'
 
 function PluginsConfigMidi()
     let g:localvimrc_persistent = 1
@@ -66,10 +63,4 @@ function PluginsConfigMidi()
     let g:vim_markdown_auto_insert_bullets = 0
 
     let g:calendar_monday = 1
-
-    if has('nvim-0.5')
-lua <<EOF
-    require('leap').set_default_keymaps()
-EOF
-    endif
 endfunction
