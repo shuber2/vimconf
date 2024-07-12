@@ -11,8 +11,6 @@ Plug 'gruvbox-community/gruvbox'
 
 Plug 'benknoble/vim-auto-origami'
 
-Plug 'roryokane/detectindent'
-
 " This plugin cannot be conditionally loaded, see github issue #18
 Plug 'derekwyatt/vim-fswitch' ", {'for': ['c', 'cpp', 'objc']}
 
@@ -27,21 +25,14 @@ Plug 'flwyd/vim-conjoin'
 Plug 'nfnty/vim-nftables'
 
 if has('nvim')
+    " Comparison at https://github.com/Darazaki/indent-o-matic/issues/12
+    Plug 'nmac427/guess-indent.nvim'
 
     Plug 'echasnovski/mini.nvim'", { 'branch': 'stable' }
 endif
 
+
 function PluginsConfigMini()
-
-    " Some preferences for indent detection
-    let g:detectindent_min_indent = 2
-    let g:detectindent_max_indent = 4
-    let g:detectindent_preferred_indent = 4
-
-    " Minimum indenting for source code
-    au FileType c,cpp,objc,java,cs let g:detectindent_min_indent = 4
-    " Consider using localvimrc config file or editorconfig instead
-    "au BufReadPost *.java :DetectIndent
 
     let g:airline_powerline_fonts=1
     let g:airline#extensions#tabline#enabled=1
@@ -96,6 +87,12 @@ function PluginsConfigMini()
 
     let g:mapleader = "\<Space>"
     let g:maplocalleader = ','
+
+    if has('nvim')
+        lua <<EOF
+        require('guess-indent').setup {}
+EOF
+    endif
 
     if has('nvim-0.7')
         lua <<EOF
