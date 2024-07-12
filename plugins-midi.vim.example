@@ -2,20 +2,14 @@ Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 
 Plug 'jamessan/vim-gnupg'
 
-" Conditional loading does not work, see github issue #823
-Plug 'ludovicchabant/vim-gutentags'
-
 Plug 'editorconfig/editorconfig-vim'
 Plug 'embear/vim-localvimrc'
 
 Plug 'airblade/vim-rooter'
 
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'preservim/vim-markdown', {'for': 'markdown'}
 Plug 'lvht/tagbar-markdown', {'for': 'markdown'}
 Plug 'habamax/vim-asciidoctor', {'for': 'asciidoc'}
-
-Plug 'PProvost/vim-markdown-jekyll', {'for': 'markdown'}
-Plug 'tpope/vim-liquid', {'for': ['liquid', 'html', 'xml', 'markdown']}
 
 Plug 'tpope/vim-ragtag'
 
@@ -46,21 +40,10 @@ function PluginsConfigMidi()
 
     au FileType markdown call RagtagInit()
 
-    " Generally disable gutentags, but enable for some filetypes
-    let g:gutentags_enabled = 0
-    au FileType c,cpp,objc,tex let g:gutentags_enabled = 1
-    " Make manually created tags files also root markers
-    let g:gutentags_project_root = ['tags']
-    let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
-    " Do not automatically generate on browsing
-    let g:gutentags_generate_on_missing = 0
-    let g:gutentags_ctags_exclude_wildignore = 1
-    let g:gutentags_ctags_exclude = [
-                \'node_modules', '_build', 'build*', 'CMakeFiles', '.*cache*', 'venv',
-                \'*.md', '*.css', '*.html', '*.json', '*.xml', '*.xmls', '*.ui']
-
     " Allow for reflow of bullet paragraphs
     let g:vim_markdown_auto_insert_bullets = 0
 
     let g:calendar_monday = 1
 endfunction
+
+" vim:ft=vim
