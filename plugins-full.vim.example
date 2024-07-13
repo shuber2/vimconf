@@ -63,12 +63,83 @@ Plug 'https://gitlab.com/dbeniamine/vim-mail'
 function PluginsConfigFull()
 
     if has('nvim-0.5')
-        set foldexpr=nvim_treesitter#foldexpr()
-
         lua <<EOF
             require'nvim-treesitter.configs'.setup {
                 -- one of "all"
-                ensure_installed = "all",
+                ensure_installed = {
+                    "asm",
+                    "awk",
+                    "bash",
+                    "bibtex",
+                    "c",
+                    "c_sharp",
+                    "cmake",
+                    "comment",
+                    "commonlisp",
+                    "cpp",
+                    "css",
+                    "csv",
+                    "diff",
+                    "disassembly",
+                    "dockerfile",
+                    "dot",
+                    "doxygen",
+                    "dtd",
+                    "editorconfig",
+                    "fortran",
+                    "git_config",
+                    "git_rebase",
+                    "gitattributes",
+                    "gitcommit",
+                    "gitignore",
+                    "gnuplot",
+                    "go",
+                    "gpg",
+                    "haskell",
+                    "html",
+                    "http",
+                    "java",
+                    "javascript",
+                    "jq",
+                    "jsdoc",
+                    "json",
+                    "json5",
+                    "jsonc",
+                    -- "latex", -- requires tree-sitter-cli
+                    "llvm",
+                    "lua",
+                    "luadoc",
+                    "luap",
+                    "make",
+                    "markdown",
+                    "markdown_inline",
+                    "meson",
+                    "muttrc",
+                    "nasm",
+                    "ninja",
+                    "objdump",
+                    "ocaml",
+                    "passwd",
+                    "perl",
+                    "php",
+                    "printf",
+                    "python",
+                    "readline",
+                    "regex",
+                    "requirements",
+                    "robots",
+                    "rust",
+                    "scss",
+                    "sql",
+                    "ssh_config",
+                    "strace",
+                    "tmux",
+                    "udev",
+                    -- "unison", -- requires tree-sitter-cli
+                    "vim",
+                    "vimdoc",
+                    "xml",
+                    "yaml"},
                 -- List of parsers to ignore installing
                 ignore_install = {},
                 -- Modules and its options go here
@@ -105,6 +176,9 @@ function PluginsConfigFull()
                 },
             }
 EOF
+
+        set foldmethod=expr
+        set foldexpr=nvim_treesitter#foldexpr()
     endif
 
     if has('nvim-0.7')
