@@ -6,7 +6,6 @@ endfunction
 Plug 'mhinz/vim-startify'
 Plug 'dstein64/vim-startuptime'
 
-Plug 'vim-airline/vim-airline'
 Plug 'gruvbox-community/gruvbox'
 
 Plug 'benknoble/vim-auto-origami'
@@ -27,16 +26,16 @@ Plug 'nfnty/vim-nftables'
 if has('nvim')
     " Comparison at https://github.com/Darazaki/indent-o-matic/issues/12
     Plug 'nmac427/guess-indent.nvim'
+endif
 
+if has('nvim-0.7')
     Plug 'echasnovski/mini.nvim'", { 'branch': 'stable' }
+else
+    Plug 'vim-airline/vim-airline'
 endif
 
 
 function PluginsConfigMini()
-
-    let g:airline_powerline_fonts=1
-    let g:airline#extensions#tabline#enabled=1
-    let g:airline#extensions#branch#enabled=1
 
     let g:gruvbox_contrast_light='hard'
     let g:gruvbox_contrast_dark='hard'
@@ -107,8 +106,8 @@ EOF
         require('mini.diff').setup()
         require('mini.files').setup()
         require('mini.fuzzy').setup()
-        require('mini.icons').setup()
         require('mini.git').setup()
+        require('mini.icons').setup()
         require('mini.jump2d').setup()
         require('mini.map').setup()
         require('mini.move').setup()
@@ -117,9 +116,15 @@ EOF
         require('mini.pick').setup()
         require('mini.sessions').setup()
         require('mini.splitjoin').setup()
+        require('mini.statusline').setup()
         require('mini.surround').setup()
+        require('mini.tabline').setup()
         require('mini.trailspace').setup()
 EOF
+    else
+        let g:airline_powerline_fonts=1
+        let g:airline#extensions#tabline#enabled=1
+        let g:airline#extensions#branch#enabled=1
     endif
 
     if has('nvim-0.9')
