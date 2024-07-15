@@ -30,8 +30,6 @@ Plug 'Konfekt/vim-DetectSpellLang', {'do': 'spell'}
 
 Plug 'dpelle/vim-LanguageTool'
 
-Plug 'ryanoasis/vim-devicons', Cond($TERM != 'linux')
-
 Plug 'joom/latex-unicoder.vim'
 Plug 'chrisbra/unicode.vim'
 
@@ -64,7 +62,7 @@ function PluginsConfigFull()
 
     if has('nvim-0.5')
         lua <<EOF
-            require'nvim-treesitter.configs'.setup {
+            require("nvim-treesitter.configs").setup({
                 -- one of "all"
                 ensure_installed = {
                     "asm",
@@ -174,7 +172,7 @@ function PluginsConfigFull()
                         },
                     },
                 },
-            }
+            })
 EOF
 
         set foldmethod=expr
