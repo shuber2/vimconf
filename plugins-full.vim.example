@@ -149,10 +149,42 @@ EOF
                 --     require("rust-tools").setup {}
                 -- end
             }
+
+            local formatter = require("formatter")
+
+            -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
+            require("formatter").setup {
+              -- Enable or disable logging
+              logging = true,
+              -- Set the log level
+              log_level = vim.log.levels.WARN,
+              -- All formatter configurations are opt-in
+              filetype = {
+                c = { require("formatter.filetypes.c").clangformat },
+                cpp = { require("formatter.filetypes.cpp").clangformat },
+                css = require('formatter.filetypes.css').prettier,
+                html = require('formatter.filetypes.html').prettier,
+                java = { require("formatter.filetypes.java").clangformat },
+                javascript = require('formatter.filetypes.javascript').prettier,
+                json = require('formatter.filetypes.json').jq,
+                python = { require("formatter.filetypes.python").black },
+                xml = { require("formatter.filetypes.xml").xmllint },
+
+                -- Use the special "*" filetype for defining formatter configurations on
+                -- any filetype
+                ["*"] = {
+                  -- "formatter.filetypes.any" defines default configurations for any
+                  -- filetype
+                  require("formatter.filetypes.any").remove_trailing_whitespace
+                }
+              }
+            }
 EOF
         " A gK mapping for hover. The default 'K' is already mapped to :Map
         nmap <silent> gK :lua vim.lsp.buf.hover()<cr>
 
+        nnoremap <silent> <leader>f :Format<CR>
+        nnoremap <silent> <leader>F :FormatWrite<CR>
     endif
 
     let g:fastfold_minlines = 0
