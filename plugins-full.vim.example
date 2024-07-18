@@ -179,12 +179,18 @@ EOF
                 }
               }
             }
+
+            require('lint').linters_by_ft = {
+                gitcommit = {'gitlint',}
+            }
 EOF
         " A gK mapping for hover. The default 'K' is already mapped to :Map
         nmap <silent> gK :lua vim.lsp.buf.hover()<cr>
 
         nnoremap <silent> <leader>f :Format<CR>
         nnoremap <silent> <leader>F :FormatWrite<CR>
+
+        au BufWritePost * lua require('lint').try_lint()
     endif
 
     let g:fastfold_minlines = 0
