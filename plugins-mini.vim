@@ -52,6 +52,13 @@ function PluginsConfigMini()
     endif
     colorscheme gruvbox
 
+
+    augroup autofoldcolumn
+        au!
+        au CursorHold,BufWinEnter * AutoOrigamiFoldColumn
+    augroup END
+
+
     let g:startify_files_number = 5
     let g:startify_session_persistence = 1
     let g:startify_lists = [

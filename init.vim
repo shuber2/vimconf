@@ -83,11 +83,6 @@ au BufNewFile *.{h,hpp,hxx} call AddIncludeGuards()
 
 au FileType cpp,c packadd termdebug
 
-augroup autofoldcolumn
-  au!
-  au CursorHold,BufWinEnter * AutoOrigamiFoldColumn
-augroup END
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
