@@ -6,7 +6,13 @@ endfunction
 Plug 'mhinz/vim-startify'
 Plug 'dstein64/vim-startuptime'
 
-Plug 'gruvbox-community/gruvbox'
+" The original repo from gruvbox-community would not support treestitter and
+" semantic highlighting
+if has('nvim')
+    Plug 'ellisonleao/gruvbox.nvim'
+else
+    Plug 'gruvbox-community/gruvbox'
+endif
 
 Plug 'benknoble/vim-auto-origami'
 
@@ -37,19 +43,30 @@ endif
 
 function PluginsConfigMini()
 
-    let g:gruvbox_contrast_light='hard'
-    let g:gruvbox_contrast_dark='hard'
-    set bg=dark
-
-    if &term =~ 'linux'
-        let g:gruvbox_termcolors=16
+    " Config of ellisonleao/gruvbox for neovim and gruvbox-community/gruvbox
+    " otherwise
+    if has('nvim')
+        lua <<EOF
+        -- Required before setting colorscheme to gruvbox
+        require("gruvbox").setup({
+            contrast = "hard",
+        })
+EOF
     else
-        " Setting termguicolors has two implications:
-        " - Breaks colors for some versions of mosh, but not if tmux is used on top of
-        "   mosh. See https://github.com/mobile-shell/mosh/issues/928
-        set termguicolors
-        let g:gruvbox_italic = 1
+        let g:gruvbox_contrast_light='hard'
+        let g:gruvbox_contrast_dark='hard'
+
+        if &term =~ 'linux'
+            let g:gruvbox_termcolors=16
+        else
+            " Setting termguicolors has two implications:
+            " - Breaks colors for some versions of mosh, but not if tmux is used on top of
+            "   mosh. See https://github.com/mobile-shell/mosh/issues/928
+            set termguicolors
+            let g:gruvbox_italic = 1
+        endif
     endif
+    set background=dark
     colorscheme gruvbox
 
 
