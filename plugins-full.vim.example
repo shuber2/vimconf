@@ -40,6 +40,8 @@ Plug 'dbeniamine/cheat.sh-vim', {'on': 'Cheat'}
 
 Plug 'sheerun/vim-polyglot'
 
+Plug 'github/copilot.vim', {'on': 'Copilot'}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FileType specific plugins
 
